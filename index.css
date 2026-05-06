@@ -1,0 +1,223 @@
+/* ────────────────────────────────────────────────────────────
+   Clinical Atlas — surface + motif system
+   ──────────────────────────────────────────────────────────── */
+
+:root {
+  --paper-100: #FAF5ED;
+  --paper-200: #F3EADB;
+  --paper-300: #E8DBC3;
+  --ink-900: #171410;
+  --ink-500: #5A5044;
+  --shell-400: #D37650;
+  --shell-500: #B85A38;
+  --forest-500: #2F3B30;
+  --signal: #C23B22;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: var(--paper-100);
+  color: var(--ink-900);
+  font-feature-settings: "ss01", "cv11", "kern";
+  font-variation-settings: "wght" 400;
+}
+
+/* Paper grain — subtle fibre, not decorative noise */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.07;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 320'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' seed='7'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* ──────────── Containers & rhythm ──────────── */
+
+.atlas-container {
+  width: 100%;
+  max-width: 86rem;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+}
+
+.atlas-section {
+  padding-block: clamp(4rem, 7vw, 6.5rem);
+}
+
+/* ──────────── Typographic motifs ──────────── */
+
+/* Display variation optimisation (Bricolage is a variable font) */
+.atlas-display {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-variation-settings: "opsz" 96, "wdth" 100, "wght" 500;
+  letter-spacing: -0.025em;
+  line-height: 0.96;
+}
+
+.atlas-display-tight {
+  font-variation-settings: "opsz" 48, "wdth" 100, "wght" 500;
+  letter-spacing: -0.02em;
+  line-height: 1.04;
+}
+
+/* Mono label used for figure captions, chapter marks, tabular data */
+.atlas-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-500);
+}
+
+.atlas-label-tight {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+}
+
+/* Chapter mark — used before section titles */
+.atlas-chapter {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--shell-600);
+  font-weight: 500;
+}
+
+/* Figure caption — used under diagrams, images */
+.atlas-figcap {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-500);
+  line-height: 1.5;
+}
+
+/* Margin note — italic serif-ish annotation pointing at body text */
+.atlas-margin {
+  font-family: Commissioner, sans-serif;
+  font-style: italic;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--shell-600);
+  position: relative;
+}
+
+/* ──────────── Rule lines ──────────── */
+
+.atlas-rule {
+  height: 1px;
+  background-color: var(--ink-900);
+  border: 0;
+  width: 100%;
+}
+
+.atlas-rule-soft {
+  height: 1px;
+  background-color: #D8C7A5;
+  border: 0;
+  width: 100%;
+}
+
+/* Short lead rule (prefix before chapter marks) */
+.atlas-lead-rule {
+  display: inline-block;
+  vertical-align: middle;
+  width: 2rem;
+  height: 1px;
+  background-color: currentColor;
+  margin-right: 0.75rem;
+}
+
+/* Leader dots (for table-of-contents rows) */
+.atlas-leader {
+  flex: 1;
+  height: 1em;
+  overflow: hidden;
+  position: relative;
+  min-width: 1.5rem;
+}
+.atlas-leader::before {
+  content: ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .";
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: #C4B69A;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* ──────────── Figure / diagram primitives ──────────── */
+
+.atlas-plate {
+  background: var(--paper-50, #FDFBF6);
+  border: 1px solid var(--paper-300);
+  position: relative;
+}
+
+.atlas-corner {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--ink-900);
+}
+.atlas-corner-tl { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
+.atlas-corner-tr { top: -1px; right: -1px; border-left: 0; border-bottom: 0; }
+.atlas-corner-bl { bottom: -1px; left: -1px; border-right: 0; border-top: 0; }
+.atlas-corner-br { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
+
+/* Page number style */
+.atlas-pagenum {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-500);
+}
+
+/* ──────────── Focus + accessibility ──────────── */
+
+:focus-visible {
+  outline: 2px solid var(--forest-500);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--shell-200);
+  color: var(--shell-900, #2E150E);
+}
+
+/* Custom scrollbar (paper-toned) */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--paper-200); }
+::-webkit-scrollbar-thumb { background: #C4B69A; border-radius: 8px; border: 2px solid var(--paper-200); }
+::-webkit-scrollbar-thumb:hover { background: #A2938A; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  body::before { display: none; }
+}

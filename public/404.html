@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dr. Sameera Kota · Loading…</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <script>
+      // SPA fallback for static hosts (e.g. GitHub Pages project sites).
+      // Preserve the requested path + search and let BrowserRouter pick it up on the index page.
+      (function () {
+        var BASE = '/Sameera-Kota-Website';
+        var l = window.location;
+        var redirect = l.pathname.replace(/\/$/, '') + l.search + l.hash;
+        l.replace(l.origin + BASE + '/?p=' + encodeURIComponent(redirect || BASE + '/'));
+      })();
+    </script>
+  </head>
+  <body>
+    <noscript>Please enable JavaScript to view this site.</noscript>
+  </body>
+</html>

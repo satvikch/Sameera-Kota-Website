@@ -1,0 +1,37 @@
+import React from 'react';
+import { Hero } from '../components/HeroSplit';
+import { FeaturedProcedures } from '../components/ProceduresBentoGrid';
+import { AboutDoctor } from '../components/AboutDoctor';
+import { WhyChooseUs } from '../components/WhyChooseUs';
+import { Process } from '../components/Process';
+import { TechnologySection } from '../components/TechnologySection';
+import { TestimonialsCarousel } from '../components/TestimonialsCarousel';
+import { FAQAccordion } from '../components/FAQAccordion';
+import { CTABanner } from '../components/CTABanner';
+
+export const HomePage: React.FC = () => {
+  return (
+    <>
+      <Hero />
+      <AboutDoctor />
+      <FeaturedProcedures limit={5} />
+      <WhyChooseUs />
+      <Process />
+      <TechnologySection />
+      <TestimonialsCarousel />
+      <FAQAccordion />
+      <CTABanner
+        chapter="Next step"
+        heading={
+          <>
+            Not sure yet? <span className="text-shell-300">Start with a consultation.</span>
+          </>
+        }
+        body="Thirty to forty minutes, no pressure, a written plan to take home. That is the whole of the first step."
+        primaryLabel="Book a consultation"
+        secondaryLabel="See all procedures"
+        secondaryHref="/procedures"
+      />
+    </>
+  );
+};
