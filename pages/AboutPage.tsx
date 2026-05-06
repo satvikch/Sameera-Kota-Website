@@ -28,7 +28,7 @@ export const AboutPage: React.FC = () => {
             <h1
               className="atlas-display text-[3rem] sm:text-6xl lg:text-[5rem] xl:text-[5.75rem] text-ink-900 leading-[0.98] max-w-[18ch]"
             >
-              The surgeon, <span className="text-rose-500">in her own words</span>.
+              The surgeon, <span className="text-rose-600">in her own words</span>.
             </h1>
             <p className="mt-8 max-w-2xl text-lg md:text-xl text-ink-700 leading-relaxed">
               A fellowship-trained general, laparoscopic and laser surgeon at
@@ -146,7 +146,7 @@ export const AboutPage: React.FC = () => {
               Approach to care
             </p>
             <h2 className="atlas-display text-3xl md:text-5xl text-ink-900 leading-[1.05] max-w-[22ch]">
-              Four rules that shape <span className="text-rose-500">every consultation</span>.
+              Four rules that shape <span className="text-rose-600">every consultation</span>.
             </h2>
           </Reveal>
 
@@ -182,7 +182,7 @@ export const AboutPage: React.FC = () => {
               Training &amp; memberships
             </p>
             <h2 className="atlas-display text-3xl md:text-5xl text-ink-900 leading-[1.05] max-w-[22ch]">
-              Where she trained, <span className="text-rose-500">what she trained in</span>.
+              Where she trained, <span className="text-rose-600">what she trained in</span>.
             </h2>
           </Reveal>
 
@@ -254,7 +254,7 @@ export const AboutPage: React.FC = () => {
                   Your first visit
                 </p>
                 <h2 className="atlas-display text-3xl md:text-5xl text-ink-900 leading-[1.05] max-w-[16ch]">
-                  What a <span className="text-rose-500">consultation</span> actually feels like.
+                  What a <span className="text-rose-600">consultation</span> actually feels like.
                 </h2>
                 <p className="mt-8 text-ink-700 leading-relaxed max-w-prose">
                   Patients often arrive anxious. It is our job, for the first fifteen

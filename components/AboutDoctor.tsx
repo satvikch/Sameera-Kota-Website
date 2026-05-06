@@ -53,7 +53,7 @@ export const AboutDoctor: React.FC = () => {
               About the surgeon
             </p>
             <h2 className="atlas-display text-3xl md:text-4xl lg:text-5xl text-ink-900 max-w-[18ch] leading-[1.05]">
-              A surgeon who&rsquo;d rather <span className="text-rose-500">explain</span> than sell.
+              A surgeon who&rsquo;d rather <span className="text-rose-600">explain</span> than sell.
             </h2>
             <p className="mt-8 text-base md:text-lg text-ink-700 leading-relaxed max-w-prose">
               {doctor.bio[0]}

@@ -19,7 +19,7 @@ export const TestimonialsCarousel: React.FC = () => {
             chapter="Patient reviews"
             title={
               <>
-                What patients say, <span className="text-rose-500">in their own words</span>.
+                What patients say, <span className="text-rose-600">in their own words</span>.
               </>
             }
             lede={

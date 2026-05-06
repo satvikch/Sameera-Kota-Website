@@ -52,7 +52,7 @@ export const ProceduresPage: React.FC = () => {
               chapter="Procedures"
               title={
                 <>
-                  The full list, <span className="text-rose-500">with the detail.</span>
+                  The full list, <span className="text-rose-600">with the detail.</span>
                 </>
               }
               lede="Every procedure here has a dedicated page — an overview, how the surgery works, honest risks, hospital stay, recovery time, and the questions patients ask most often. Nothing is hidden behind sales copy."
@@ -72,7 +72,7 @@ export const ProceduresPage: React.FC = () => {
                   Our approach
                 </p>
                 <h2 className="atlas-display text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[1.05] max-w-[16ch]">
-                  Why <span className="text-rose-500">minimally invasive</span> matters.
+                  Why <span className="text-rose-600">minimally invasive</span> matters.
                 </h2>
               </div>
               <div className="lg:col-span-7 space-y-8">
@@ -111,7 +111,7 @@ export const ProceduresPage: React.FC = () => {
               chapter="Start with your concern"
               title={
                 <>
-                  Browse by <span className="text-rose-500">condition</span>, not procedure.
+                  Browse by <span className="text-rose-600">condition</span>, not procedure.
                 </>
               }
               lede="Most patients know what they're feeling, not the name of the surgery for it. Find your concern below — we'll take you to the right page."
@@ -156,7 +156,7 @@ export const ProceduresPage: React.FC = () => {
               chapter="Complete index"
               title={
                 <>
-                  Every procedure <span className="text-rose-500">Dr. Sameera performs</span>.
+                  Every procedure <span className="text-rose-600">Dr. Sameera performs</span>.
                 </>
               }
               lede="Filter by discipline below, or browse the full list."

@@ -36,7 +36,7 @@ export const ResultsPage: React.FC = () => {
               chapter="Results"
               title={
                 <>
-                  Outcomes we'll share <span className="text-rose-500">when it is right to</span>.
+                  Outcomes we'll share <span className="text-rose-600">when it is right to</span>.
                 </>
               }
               lede="A public gallery of before-and-after surgical results is coming — but only once we have a consented, representative set of photographs."

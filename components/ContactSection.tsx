@@ -17,7 +17,7 @@ export const ContactSection: React.FC = () => {
               chapter="Contact"
               title={
                 <>
-                  Tell us briefly <span className="text-rose-500">what is going on</span>.
+                  Tell us briefly <span className="text-rose-600">what is going on</span>.
                 </>
               }
               lede="We read every note and reply within one working day. For urgent concerns, please call the clinic directly."

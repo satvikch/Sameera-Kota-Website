@@ -16,7 +16,7 @@ export const ClinicGallery: React.FC = () => {
             chapter="Inside the clinic"
             title={
               <>
-                A look around <span className="text-rose-500">Susheela Hospital</span>.
+                A look around <span className="text-rose-600">Susheela Hospital</span>.
               </>
             }
             lede="Reception, consultation room, and the procedure room where most of the work happens."

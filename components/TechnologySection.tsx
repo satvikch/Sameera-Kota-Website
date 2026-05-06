@@ -15,7 +15,7 @@ export const TechnologySection: React.FC = () => {
             chapter="Equipment"
             title={
               <>
-                Tools chosen for the <span className="text-rose-500">patient</span>, not the brochure.
+                Tools chosen for the <span className="text-rose-600">patient</span>, not the brochure.
               </>
             }
             lede="A short, honest list. Each item is here because it changes how surgery feels, or how recovery goes."

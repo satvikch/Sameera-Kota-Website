@@ -10,7 +10,7 @@ export const NotFoundPage: React.FC = () => {
           Page not found · 404
         </p>
         <h1 className="atlas-display text-5xl md:text-6xl lg:text-7xl text-ink-900 leading-[0.95]">
-          We couldn't find <span className="text-rose-500">that page</span>.
+          We couldn't find <span className="text-rose-600">that page</span>.
         </h1>
         <p className="mt-8 text-ink-700 leading-relaxed max-w-lg mx-auto">
           The page you are looking for may have moved or no longer exists. Head back home or browse the procedures.

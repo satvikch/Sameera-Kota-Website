@@ -117,7 +117,7 @@ export const FeaturedProcedures: React.FC<FeaturedProceduresProps> = ({ limit })
               chapter="Procedures"
               title={
                 <>
-                  What Dr. Sameera K <span className="text-rose-500">treats</span>.
+                  What Dr. Sameera K <span className="text-rose-600">treats</span>.
                 </>
               }
               lede="Click any procedure to read the full page — what it is, how the surgery works, what recovery looks like, and the questions patients ask most."

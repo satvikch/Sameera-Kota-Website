@@ -30,7 +30,7 @@ export const FAQAccordion: React.FC = () => {
             chapter="Common questions"
             title={
               <>
-                What patients <span className="text-rose-500">ask us, often</span>.
+                What patients <span className="text-rose-600">ask us, often</span>.
               </>
             }
             lede="Answered plainly. If something is missing, ask us directly — that is usually where the best answers come from."

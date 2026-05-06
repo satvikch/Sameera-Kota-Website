@@ -17,7 +17,7 @@ export const WhyChooseUs: React.FC = () => {
             chapter="How we work"
             title={
               <>
-                Four things that shape <span className="text-rose-500">every decision</span> at this clinic.
+                Four things that shape <span className="text-rose-600">every decision</span> at this clinic.
               </>
             }
             lede="No four-card bento. Just a short read, in plain language."
