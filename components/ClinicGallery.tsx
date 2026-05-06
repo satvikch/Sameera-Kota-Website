@@ -16,7 +16,7 @@ export const ClinicGallery: React.FC = () => {
             chapter="Inside the clinic"
             title={
               <>
-                A look around <span className="text-shell-500">Susheela Hospital</span>.
+                A look around <span className="text-rose-500">Susheela Hospital</span>.
               </>
             }
             lede="Reception, consultation room, and the procedure room where most of the work happens."
@@ -33,7 +33,7 @@ export const ClinicGallery: React.FC = () => {
                   <span className="atlas-corner atlas-corner-tr" aria-hidden="true" />
                   <span className="atlas-corner atlas-corner-bl" aria-hidden="true" />
                   <span className="atlas-corner atlas-corner-br" aria-hidden="true" />
-                  <div className="aspect-[4/3] bg-shell-50 overflow-hidden">
+                  <div className="aspect-[4/3] bg-rose-50 overflow-hidden">
                     {hasReal ? (
                       <img
                         src={photo.src}

@@ -36,7 +36,7 @@ export const ResultsPage: React.FC = () => {
               chapter="Results"
               title={
                 <>
-                  Outcomes we'll share <span className="text-shell-500">when it is right to</span>.
+                  Outcomes we'll share <span className="text-rose-500">when it is right to</span>.
                 </>
               }
               lede="A public gallery of before-and-after surgical results is coming — but only once we have a consented, representative set of photographs."
@@ -86,7 +86,7 @@ export const ResultsPage: React.FC = () => {
         chapter="Ask us directly"
         heading={
           <>
-            Want to know what the outcome might look like <span className="text-shell-300">for you?</span>
+            Want to know what the outcome might look like <span className="text-rose-300">for you?</span>
           </>
         }
         body="Relevant anonymised, consented photographs are reviewed privately during your consultation."

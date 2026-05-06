@@ -24,7 +24,7 @@ export const HomePage: React.FC = () => {
         chapter="Next step"
         heading={
           <>
-            Not sure yet? <span className="text-shell-300">Start with a consultation.</span>
+            Not sure yet? <span className="text-rose-300">Start with a consultation.</span>
           </>
         }
         body="Thirty to forty minutes, no pressure, a written plan to take home. That is the whole of the first step."

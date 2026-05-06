@@ -17,7 +17,7 @@ export const ContactSection: React.FC = () => {
               chapter="Contact"
               title={
                 <>
-                  Tell us briefly <span className="text-shell-500">what is going on</span>.
+                  Tell us briefly <span className="text-rose-500">what is going on</span>.
                 </>
               }
               lede="We read every note and reply within one working day. For urgent concerns, please call the clinic directly."
@@ -38,7 +38,7 @@ export const ContactSection: React.FC = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <p className="atlas-label mb-1">Telephone</p>
-                  <a href={`tel:${p.phone}`} className="font-mono text-sm text-ink-900 hover:text-shell-600">
+                  <a href={`tel:${p.phone}`} className="font-mono text-sm text-ink-900 hover:text-rose-600">
                     {p.phoneDisplay}
                   </a>
                 </div>
@@ -48,14 +48,14 @@ export const ContactSection: React.FC = () => {
                     href={`https://wa.me/${p.whatsapp}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-mono text-sm text-ink-900 hover:text-shell-600"
+                    className="font-mono text-sm text-ink-900 hover:text-rose-600"
                   >
                     {p.whatsappDisplay}
                   </a>
                 </div>
                 <div>
                   <p className="atlas-label mb-1">Post</p>
-                  <a href={`mailto:${p.email}`} className="font-mono text-sm text-ink-900 hover:text-shell-600">
+                  <a href={`mailto:${p.email}`} className="font-mono text-sm text-ink-900 hover:text-rose-600">
                     {p.email}
                   </a>
                 </div>
@@ -63,7 +63,7 @@ export const ContactSection: React.FC = () => {
                   <p className="atlas-label mb-1">Emergency</p>
                   <a
                     href={`tel:${p.emergencyPhone}`}
-                    className="font-mono text-sm text-signal hover:text-shell-700"
+                    className="font-mono text-sm text-signal hover:text-rose-700"
                   >
                     {p.emergencyPhoneDisplay}
                   </a>
@@ -106,7 +106,7 @@ export const ContactSection: React.FC = () => {
                   href={p.mapDirectionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono text-[10px] tracking-[0.14em] uppercase text-ink-700 hover:text-shell-600 border-b border-ink-300 pb-0.5"
+                  className="font-mono text-[10px] tracking-[0.14em] uppercase text-ink-700 hover:text-rose-600 border-b border-ink-300 pb-0.5"
                 >
                   Open in Maps ↗
                 </a>

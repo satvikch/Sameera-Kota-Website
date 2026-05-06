@@ -19,7 +19,7 @@ export const TestimonialsCarousel: React.FC = () => {
             chapter="Patient reviews"
             title={
               <>
-                What patients say, <span className="text-shell-500">in their own words</span>.
+                What patients say, <span className="text-rose-500">in their own words</span>.
               </>
             }
             lede={
@@ -37,7 +37,7 @@ export const TestimonialsCarousel: React.FC = () => {
                 {/* Big quote mark */}
                 <span
                   aria-hidden="true"
-                  className="absolute left-0 -top-1 font-display text-6xl md:text-7xl text-shell-500 leading-none select-none"
+                  className="absolute left-0 -top-1 font-display text-6xl md:text-7xl text-rose-500 leading-none select-none"
                   style={{ fontVariationSettings: '"opsz" 96, "wght" 500' }}
                 >
                   &ldquo;
@@ -50,7 +50,7 @@ export const TestimonialsCarousel: React.FC = () => {
                     <p className="atlas-display text-lg text-ink-900">{t.name}</p>
                     <p className="atlas-label-tight text-ink-500 mt-1">{t.procedure}</p>
                     {t.isTemplate && (
-                      <p className="mt-3 inline-flex items-center gap-1.5 font-mono text-[9px] tracking-[0.2em] uppercase text-shell-600 border border-shell-400 px-2 py-1">
+                      <p className="mt-3 inline-flex items-center gap-1.5 font-mono text-[9px] tracking-[0.2em] uppercase text-rose-600 border border-rose-400 px-2 py-1">
                         Template review
                       </p>
                     )}

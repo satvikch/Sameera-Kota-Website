@@ -23,12 +23,12 @@ export const Hero: React.FC = () => {
         <div className="grid gap-y-14 gap-x-12 lg:grid-cols-12 pt-12 md:pt-16 items-start">
           {/* Left — headline + CTAs + key facts */}
           <div className="lg:col-span-7">
-            <p className="font-mono text-[11px] tracking-[0.22em] uppercase text-shell-600 mb-6">
-              <span className="inline-block w-8 h-px bg-shell-500 align-middle mr-3" />
+            <p className="font-mono text-[11px] tracking-[0.22em] uppercase text-rose-600 mb-6">
+              <span className="inline-block w-8 h-px bg-rose-500 align-middle mr-3" />
               General, laparoscopic &amp; laser surgeon
             </p>
             <h1 className="atlas-display text-[2.75rem] sm:text-6xl lg:text-[4.5rem] xl:text-[5.25rem] text-ink-900 leading-[0.98]">
-              Surgery you&rsquo;ll <span className="text-shell-500">understand</span> before you say yes.
+              Surgery you&rsquo;ll understand before you say yes.
             </h1>
             <p className="mt-8 max-w-xl text-lg md:text-xl text-ink-700 leading-relaxed">
               Dr. Sameera K treats hernia, gallstones, appendicitis, piles, thyroid
@@ -40,7 +40,7 @@ export const Hero: React.FC = () => {
             <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:items-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-3 bg-ink-900 text-paper-100 h-14 px-6 hover:bg-forest-500 transition-colors group"
+                className="inline-flex items-center justify-center gap-3 bg-ink-900 text-paper-100 h-14 px-6 hover:bg-oxblood-500 transition-colors group"
               >
                 <span className="text-sm tracking-tight">Book a consultation</span>
                 <ArrowUpRight
@@ -78,7 +78,7 @@ export const Hero: React.FC = () => {
                 <dd className="text-sm text-ink-900">
                   <a
                     href={`tel:${doctor.practice.phone}`}
-                    className="font-mono hover:text-shell-600"
+                    className="font-mono hover:text-rose-600"
                   >
                     {doctor.practice.phoneDisplay}
                   </a>
@@ -94,7 +94,7 @@ export const Hero: React.FC = () => {
               <span className="atlas-corner atlas-corner-tr" aria-hidden="true" />
               <span className="atlas-corner atlas-corner-bl" aria-hidden="true" />
               <span className="atlas-corner atlas-corner-br" aria-hidden="true" />
-              <div className="aspect-[4/5] bg-shell-50 relative overflow-hidden">
+              <div className="aspect-[4/5] bg-rose-50 relative overflow-hidden">
                 {hasRealPhoto ? (
                   <img
                     src={doctor.photo}
@@ -110,9 +110,9 @@ export const Hero: React.FC = () => {
                     aria-hidden="true"
                   >
                     <svg viewBox="0 0 400 500" className="w-full h-full">
-                      <rect width="400" height="500" fill="#FDF1EA" />
-                      <line x1="60" y1="120" x2="340" y2="120" stroke="#D37650" strokeWidth="0.5" />
-                      <line x1="60" y1="380" x2="340" y2="380" stroke="#D37650" strokeWidth="0.5" />
+                      <rect width="400" height="500" fill="#FBEBE5" />
+                      <line x1="60" y1="120" x2="340" y2="120" stroke="#C97366" strokeWidth="0.5" />
+                      <line x1="60" y1="380" x2="340" y2="380" stroke="#C97366" strokeWidth="0.5" />
                       <text
                         x="200"
                         y="290"
@@ -120,7 +120,7 @@ export const Hero: React.FC = () => {
                         fontFamily="Bricolage Grotesque, sans-serif"
                         fontSize="210"
                         fontWeight="500"
-                        fill="#171410"
+                        fill="#1A100E"
                         letterSpacing="-8"
                       >
                         SK
@@ -132,7 +132,7 @@ export const Hero: React.FC = () => {
                         fontFamily="JetBrains Mono, monospace"
                         fontSize="9"
                         letterSpacing="2"
-                        fill="#5A5044"
+                        fill="#5C4641"
                       >
                         PORTRAIT · TO BE COMMISSIONED
                       </text>

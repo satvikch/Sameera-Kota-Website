@@ -1,7 +1,7 @@
 import React from 'react';
 import { cn } from './cn';
 
-type Variant = 'primary' | 'ghost' | 'outline' | 'shell';
+type Variant = 'primary' | 'ghost' | 'outline' | 'rose';
 type Size = 'sm' | 'md' | 'lg';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -13,17 +13,17 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const base =
-  'inline-flex items-center justify-center gap-3 font-medium tracking-tight transition-[background,color,border-color] duration-200 focus-visible:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-forest-500 disabled:opacity-50 disabled:cursor-not-allowed';
+  'inline-flex items-center justify-center gap-3 font-medium tracking-tight transition-[background,color,border-color] duration-200 focus-visible:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-oxblood-500 disabled:opacity-50 disabled:cursor-not-allowed';
 
 const variants: Record<Variant, string> = {
   primary:
-    'bg-ink-900 text-paper-100 hover:bg-forest-500 border border-ink-900 hover:border-forest-500',
-  shell:
-    'bg-shell-500 text-paper-50 hover:bg-shell-600 border border-shell-500 hover:border-shell-600',
+    'bg-ink-900 text-paper-100 hover:bg-oxblood-500 border border-ink-900 hover:border-oxblood-500',
+  rose:
+    'bg-rose-500 text-paper-50 hover:bg-rose-600 border border-rose-500 hover:border-rose-600',
   outline:
     'border border-ink-900 text-ink-900 hover:bg-ink-900 hover:text-paper-100 bg-transparent',
   ghost:
-    'text-ink-700 hover:text-ink-900 underline underline-offset-4 decoration-ink-300 hover:decoration-shell-500',
+    'text-ink-700 hover:text-ink-900 underline underline-offset-4 decoration-ink-300 hover:decoration-rose-500',
 };
 
 const sizes: Record<Size, string> = {

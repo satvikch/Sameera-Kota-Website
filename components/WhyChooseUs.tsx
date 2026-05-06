@@ -17,7 +17,7 @@ export const WhyChooseUs: React.FC = () => {
             chapter="How we work"
             title={
               <>
-                Four things that shape <span className="text-shell-500">every decision</span> at this clinic.
+                Four things that shape <span className="text-rose-500">every decision</span> at this clinic.
               </>
             }
             lede="No four-card bento. Just a short read, in plain language."
@@ -30,7 +30,7 @@ export const WhyChooseUs: React.FC = () => {
               <Reveal key={card.number} delay={i * 0.06}>
                 <article className="relative py-10 border-t border-paper-300 first:border-t-0">
                   <div className="flex items-baseline gap-6 mb-5">
-                    <span className="font-mono text-xs tracking-[0.1em] text-shell-600 flex-shrink-0">
+                    <span className="font-mono text-xs tracking-[0.1em] text-rose-600 flex-shrink-0">
                       {card.number}
                     </span>
                     <h3 className="atlas-display text-2xl md:text-3xl text-ink-900 leading-[1.05]">
@@ -50,7 +50,7 @@ export const WhyChooseUs: React.FC = () => {
             <div className="sticky top-28 pl-8 border-l border-paper-300 space-y-16">
               {site.whyChooseUs.map((card) => (
                 <div key={card.number} className="relative">
-                  <span className="absolute -left-8 top-2 w-6 h-px bg-shell-400" />
+                  <span className="absolute -left-8 top-2 w-6 h-px bg-rose-400" />
                   <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-ink-500 mb-1">
                     {card.number}
                   </p>

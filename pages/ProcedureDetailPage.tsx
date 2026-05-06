@@ -14,7 +14,7 @@ export const ProcedureDetailPage: React.FC = () => {
     return (
       <section className="atlas-section bg-paper-100">
         <div className="atlas-container text-center max-w-xl mx-auto">
-          <p className="font-mono text-[11px] tracking-[0.18em] uppercase text-shell-600 mb-4">
+          <p className="font-mono text-[11px] tracking-[0.18em] uppercase text-rose-600 mb-4">
             Procedure not found
           </p>
           <h1 className="atlas-display text-4xl md:text-5xl">We couldn't find that procedure.</h1>
@@ -22,7 +22,7 @@ export const ProcedureDetailPage: React.FC = () => {
           <div className="mt-8">
             <Link
               to="/procedures"
-              className="inline-flex items-center gap-2 border-b border-ink-900 pb-1 text-sm hover:text-shell-600"
+              className="inline-flex items-center gap-2 border-b border-ink-900 pb-1 text-sm hover:text-rose-600"
             >
               <ArrowLeft size={14} strokeWidth={1.5} /> Back to all procedures
             </Link>
@@ -125,7 +125,7 @@ export const ProcedureDetailPage: React.FC = () => {
                     <ul className="grid md:grid-cols-2 gap-x-8 gap-y-3">
                       {d.benefits.map((b, i) => (
                         <li key={i} className="grid grid-cols-[2rem_1fr] gap-3 items-baseline">
-                          <span className="font-mono text-[10px] tracking-[0.12em] text-shell-600">
+                          <span className="font-mono text-[10px] tracking-[0.12em] text-rose-600">
                             {String(i + 1).padStart(2, '0')} ·
                           </span>
                           <span className="text-sm text-ink-900 leading-snug">{b}</span>
@@ -142,7 +142,7 @@ export const ProcedureDetailPage: React.FC = () => {
                     <div className="flex items-start gap-4">
                       <AlertTriangle size={20} strokeWidth={1.5} className="text-signal mt-1 flex-shrink-0" aria-hidden="true" />
                       <div>
-                        <p className="atlas-label mb-3" style={{ color: '#C23B22' }}>
+                        <p className="atlas-label mb-3" style={{ color: '#B7301F' }}>
                           Honest risks
                         </p>
                         <p className="text-ink-700 leading-relaxed max-w-prose">{d.honestRisks}</p>
@@ -247,7 +247,7 @@ export const ProcedureDetailPage: React.FC = () => {
                 </p>
                 <Link
                   to="/contact"
-                  className="mt-6 inline-flex items-center justify-center w-full bg-shell-500 text-paper-50 h-12 px-5 hover:bg-shell-600 transition-colors text-sm tracking-tight"
+                  className="mt-6 inline-flex items-center justify-center w-full bg-rose-500 text-paper-50 h-12 px-5 hover:bg-rose-600 transition-colors text-sm tracking-tight"
                 >
                   Book a consultation
                 </Link>
@@ -261,7 +261,7 @@ export const ProcedureDetailPage: React.FC = () => {
         chapter="Next step"
         heading={
           <>
-            Ready to take the next step? <span className="text-shell-300">We're here.</span>
+            Ready to take the next step? <span className="text-rose-300">We're here.</span>
           </>
         }
         body="Send a short note on WhatsApp or email. We reply within one working day."

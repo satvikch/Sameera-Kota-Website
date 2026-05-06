@@ -93,7 +93,7 @@ export const BookingForm: React.FC = () => {
           did not, please email{' '}
           <a
             href={`mailto:${site.doctor.practice.email}`}
-            className="underline underline-offset-2 text-shell-600"
+            className="underline underline-offset-2 text-rose-600"
           >
             {site.doctor.practice.email}
           </a>{' '}
@@ -215,7 +215,7 @@ export const BookingForm: React.FC = () => {
       <div className="flex flex-col sm:flex-row sm:items-center gap-6 pt-6 border-t border-paper-300">
         <button
           type="submit"
-          className="inline-flex items-center gap-3 bg-ink-900 text-paper-100 h-12 px-6 text-sm tracking-tight hover:bg-forest-500 transition-colors"
+          className="inline-flex items-center gap-3 bg-ink-900 text-paper-100 h-12 px-6 text-sm tracking-tight hover:bg-oxblood-500 transition-colors"
         >
           <MessageCircle size={16} strokeWidth={1.5} aria-hidden="true" />
           Send note via WhatsApp

@@ -78,7 +78,7 @@ export const ContactPage: React.FC = () => {
               chapter="Before you arrive"
               title={
                 <>
-                  Small things that make a <span className="text-shell-500">first visit smoother</span>.
+                  Small things that make a <span className="text-rose-500">first visit smoother</span>.
                 </>
               }
               lede="Nothing here is essential — we can still see you if you arrive with none of it. But any of it helps us use the consultation time well."
@@ -111,7 +111,7 @@ export const ContactPage: React.FC = () => {
                           className="flex gap-3 text-sm text-ink-700 leading-snug"
                         >
                           <span
-                            className="mt-2 h-1 w-3 flex-shrink-0 bg-shell-500"
+                            className="mt-2 h-1 w-3 flex-shrink-0 bg-rose-500"
                             aria-hidden="true"
                           />
                           <span>{item}</span>
@@ -134,7 +134,7 @@ export const ContactPage: React.FC = () => {
               chapter="How we reply"
               title={
                 <>
-                  What to <span className="text-shell-500">expect from us</span> when you reach out.
+                  What to <span className="text-rose-500">expect from us</span> when you reach out.
                 </>
               }
               lede="If we\u2019re slower than this, please chase — something has gone wrong on our end."
@@ -160,7 +160,7 @@ export const ContactPage: React.FC = () => {
                         <Icon
                           size={16}
                           strokeWidth={1.5}
-                          className="text-shell-600 flex-shrink-0"
+                          className="text-rose-600 flex-shrink-0"
                           aria-hidden="true"
                         />
                         <span className="atlas-display text-lg text-ink-900 leading-tight">

@@ -43,7 +43,7 @@ export const ProcedureCard: React.FC<ProcedureCardProps> = ({ procedure }) => {
   return (
     <Link
       to={`/procedures/${procedure.slug}`}
-      className="group atlas-plate bg-paper-50 relative flex flex-col h-full hover:bg-shell-50 transition-colors duration-300"
+      className="group atlas-plate bg-paper-50 relative flex flex-col h-full hover:bg-rose-50 transition-colors duration-300"
     >
       <span className="atlas-corner atlas-corner-tl" aria-hidden="true" />
       <span className="atlas-corner atlas-corner-tr" aria-hidden="true" />
@@ -51,7 +51,7 @@ export const ProcedureCard: React.FC<ProcedureCardProps> = ({ procedure }) => {
       <span className="atlas-corner atlas-corner-br" aria-hidden="true" />
 
       {/* Image region */}
-      <div className="aspect-[16/10] bg-shell-100 overflow-hidden relative border-b border-paper-300">
+      <div className="aspect-[16/10] bg-rose-100 overflow-hidden relative border-b border-paper-300">
         {hasImage ? (
           <img
             src={procedure.imageUrl}
@@ -65,11 +65,11 @@ export const ProcedureCard: React.FC<ProcedureCardProps> = ({ procedure }) => {
             aria-hidden="true"
             style={{
               backgroundImage:
-                'linear-gradient(135deg, #FDF1EA 0%, #F9DDCE 60%, #F2BEA6 100%)',
+                'linear-gradient(135deg, #FBEBE5 0%, #F6D7CC 60%, #ECB7A6 100%)',
             }}
           >
-            <Icon size={56} strokeWidth={1.1} className="text-shell-700 mb-3" />
-            <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-shell-700">
+            <Icon size={56} strokeWidth={1.1} className="text-rose-700 mb-3" />
+            <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-rose-700">
               Image forthcoming
             </p>
           </div>
@@ -79,17 +79,17 @@ export const ProcedureCard: React.FC<ProcedureCardProps> = ({ procedure }) => {
       {/* Caption */}
       <div className="p-6 md:p-7 flex-1 flex flex-col">
         <p className="atlas-label mb-3">{procedure.category}</p>
-        <h3 className="atlas-display text-xl md:text-2xl text-ink-900 leading-[1.1] group-hover:text-shell-600 transition-colors">
+        <h3 className="atlas-display text-xl md:text-2xl text-ink-900 leading-[1.1] group-hover:text-rose-600 transition-colors">
           {procedure.title}
         </h3>
         <span
-          className="inline-block w-10 h-px bg-shell-500 mt-5 group-hover:w-16 transition-all duration-300"
+          className="inline-block w-10 h-px bg-rose-500 mt-5 group-hover:w-16 transition-all duration-300"
           aria-hidden="true"
         />
         <p className="mt-4 text-sm text-ink-700 leading-relaxed line-clamp-3">
           {procedure.summary}
         </p>
-        <span className="mt-auto pt-6 inline-flex items-center gap-2 text-sm tracking-tight text-ink-900 group-hover:text-shell-600 transition-colors">
+        <span className="mt-auto pt-6 inline-flex items-center gap-2 text-sm tracking-tight text-ink-900 group-hover:text-rose-600 transition-colors">
           Read the full page
           <ArrowUpRight
             size={14}
@@ -117,14 +117,14 @@ export const FeaturedProcedures: React.FC<FeaturedProceduresProps> = ({ limit })
               chapter="Procedures"
               title={
                 <>
-                  What Dr. Sameera K <span className="text-shell-500">treats</span>.
+                  What Dr. Sameera K <span className="text-rose-500">treats</span>.
                 </>
               }
               lede="Click any procedure to read the full page — what it is, how the surgery works, what recovery looks like, and the questions patients ask most."
             />
             <Link
               to="/procedures"
-              className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.16em] uppercase text-ink-700 hover:text-shell-600 transition-colors border-b border-ink-900 pb-1 self-start md:self-end"
+              className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.16em] uppercase text-ink-700 hover:text-rose-600 transition-colors border-b border-ink-900 pb-1 self-start md:self-end"
             >
               See all procedures
               <ArrowUpRight size={14} strokeWidth={1.5} aria-hidden="true" />

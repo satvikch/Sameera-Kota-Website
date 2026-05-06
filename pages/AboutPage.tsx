@@ -28,7 +28,7 @@ export const AboutPage: React.FC = () => {
             <h1
               className="atlas-display text-[3rem] sm:text-6xl lg:text-[5rem] xl:text-[5.75rem] text-ink-900 leading-[0.98] max-w-[18ch]"
             >
-              The surgeon, <span className="text-shell-500">in her own words</span>.
+              The surgeon, <span className="text-rose-500">in her own words</span>.
             </h1>
             <p className="mt-8 max-w-2xl text-lg md:text-xl text-ink-700 leading-relaxed">
               A fellowship-trained general, laparoscopic and laser surgeon at
@@ -51,7 +51,7 @@ export const AboutPage: React.FC = () => {
                 <span className="atlas-corner atlas-corner-tr" aria-hidden="true" />
                 <span className="atlas-corner atlas-corner-bl" aria-hidden="true" />
                 <span className="atlas-corner atlas-corner-br" aria-hidden="true" />
-                <div className="aspect-[4/5] bg-shell-50 relative overflow-hidden">
+                <div className="aspect-[4/5] bg-rose-50 relative overflow-hidden">
                   {hasRealPhoto ? (
                     <img
                       src={doctor.photo}
@@ -64,9 +64,9 @@ export const AboutPage: React.FC = () => {
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center" aria-hidden="true">
                       <svg viewBox="0 0 400 500" className="w-full h-full">
-                        <rect width="400" height="500" fill="#FDF1EA" />
-                        <line x1="60" y1="120" x2="340" y2="120" stroke="#D37650" strokeWidth="0.5" />
-                        <line x1="60" y1="380" x2="340" y2="380" stroke="#D37650" strokeWidth="0.5" />
+                        <rect width="400" height="500" fill="#FBEBE5" />
+                        <line x1="60" y1="120" x2="340" y2="120" stroke="#C97366" strokeWidth="0.5" />
+                        <line x1="60" y1="380" x2="340" y2="380" stroke="#C97366" strokeWidth="0.5" />
                         <text
                           x="200"
                           y="290"
@@ -74,7 +74,7 @@ export const AboutPage: React.FC = () => {
                           fontFamily="Bricolage Grotesque, sans-serif"
                           fontSize="210"
                           fontWeight="500"
-                          fill="#171410"
+                          fill="#1A100E"
                           letterSpacing="-8"
                         >
                           SK
@@ -86,7 +86,7 @@ export const AboutPage: React.FC = () => {
                           fontFamily="JetBrains Mono, monospace"
                           fontSize="9"
                           letterSpacing="2"
-                          fill="#5A5044"
+                          fill="#5C4641"
                         >
                           PORTRAIT · TO BE COMMISSIONED
                         </text>
@@ -146,7 +146,7 @@ export const AboutPage: React.FC = () => {
               Approach to care
             </p>
             <h2 className="atlas-display text-3xl md:text-5xl text-ink-900 leading-[1.05] max-w-[22ch]">
-              Four rules that shape <span className="text-shell-500">every consultation</span>.
+              Four rules that shape <span className="text-rose-500">every consultation</span>.
             </h2>
           </Reveal>
 
@@ -157,7 +157,7 @@ export const AboutPage: React.FC = () => {
                   key={point.number}
                   className="grid md:grid-cols-[5rem_20rem_1fr] gap-x-8 gap-y-3 px-2 py-8"
                 >
-                  <dt className="font-mono text-sm tracking-[0.1em] text-shell-600">
+                  <dt className="font-mono text-sm tracking-[0.1em] text-rose-600">
                     {point.number}
                   </dt>
                   <dd className="atlas-display text-xl md:text-2xl text-ink-900 leading-[1.1]">
@@ -182,7 +182,7 @@ export const AboutPage: React.FC = () => {
               Training &amp; memberships
             </p>
             <h2 className="atlas-display text-3xl md:text-5xl text-ink-900 leading-[1.05] max-w-[22ch]">
-              Where she trained, <span className="text-shell-500">what she trained in</span>.
+              Where she trained, <span className="text-rose-500">what she trained in</span>.
             </h2>
           </Reveal>
 
@@ -219,7 +219,7 @@ export const AboutPage: React.FC = () => {
                 {doctor.memberships.map((m, i) => (
                   <li key={i} className="flex gap-4 py-5 items-baseline">
                     <span
-                      className="inline-block w-4 h-px bg-shell-500 flex-shrink-0 mt-2.5"
+                      className="inline-block w-4 h-px bg-rose-500 flex-shrink-0 mt-2.5"
                       aria-hidden="true"
                     />
                     <span className="text-sm md:text-base text-ink-900 leading-snug">{m}</span>
@@ -227,7 +227,7 @@ export const AboutPage: React.FC = () => {
                 ))}
               </ul>
 
-              <div className="mt-10 bg-shell-50 border border-shell-100 p-6">
+              <div className="mt-10 bg-rose-50 border border-rose-100 p-6">
                 <p className="atlas-label mb-3">On the fellowships</p>
                 <p className="text-sm text-ink-700 leading-relaxed">
                   <strong className="text-ink-900 font-medium">FMAS</strong> (Fellowship of
@@ -254,7 +254,7 @@ export const AboutPage: React.FC = () => {
                   Your first visit
                 </p>
                 <h2 className="atlas-display text-3xl md:text-5xl text-ink-900 leading-[1.05] max-w-[16ch]">
-                  What a <span className="text-shell-500">consultation</span> actually feels like.
+                  What a <span className="text-rose-500">consultation</span> actually feels like.
                 </h2>
                 <p className="mt-8 text-ink-700 leading-relaxed max-w-prose">
                   Patients often arrive anxious. It is our job, for the first fifteen
@@ -297,7 +297,7 @@ export const AboutPage: React.FC = () => {
                 <div className="mt-8 pt-6 border-t border-paper-300">
                   <Link
                     to="/contact"
-                    className="inline-flex items-center gap-3 group text-sm tracking-tight text-ink-900 border-b border-ink-900 pb-1 hover:border-shell-500 hover:text-shell-600 transition-colors"
+                    className="inline-flex items-center gap-3 group text-sm tracking-tight text-ink-900 border-b border-ink-900 pb-1 hover:border-rose-500 hover:text-rose-600 transition-colors"
                   >
                     Book a consultation
                     <ArrowUpRight
@@ -322,7 +322,7 @@ export const AboutPage: React.FC = () => {
         chapter="Next step"
         heading={
           <>
-            Write first if you prefer. <span className="text-shell-300">No commitment needed.</span>
+            Write first if you prefer. <span className="text-rose-300">No commitment needed.</span>
           </>
         }
         body="A short note on WhatsApp or email is always a good first step — no visit yet, no decisions. We reply within one working day."

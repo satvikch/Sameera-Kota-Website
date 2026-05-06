@@ -52,7 +52,7 @@ export const ProceduresPage: React.FC = () => {
               chapter="Procedures"
               title={
                 <>
-                  The full list, <span className="text-shell-500">with the detail.</span>
+                  The full list, <span className="text-rose-500">with the detail.</span>
                 </>
               }
               lede="Every procedure here has a dedicated page — an overview, how the surgery works, honest risks, hospital stay, recovery time, and the questions patients ask most often. Nothing is hidden behind sales copy."
@@ -72,7 +72,7 @@ export const ProceduresPage: React.FC = () => {
                   Our approach
                 </p>
                 <h2 className="atlas-display text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[1.05] max-w-[16ch]">
-                  Why <span className="text-shell-500">minimally invasive</span> matters.
+                  Why <span className="text-rose-500">minimally invasive</span> matters.
                 </h2>
               </div>
               <div className="lg:col-span-7 space-y-8">
@@ -111,7 +111,7 @@ export const ProceduresPage: React.FC = () => {
               chapter="Start with your concern"
               title={
                 <>
-                  Browse by <span className="text-shell-500">condition</span>, not procedure.
+                  Browse by <span className="text-rose-500">condition</span>, not procedure.
                 </>
               }
               lede="Most patients know what they're feeling, not the name of the surgery for it. Find your concern below — we'll take you to the right page."
@@ -124,10 +124,10 @@ export const ProceduresPage: React.FC = () => {
                 <li key={c.id}>
                   <Link
                     to={`/procedures/${c.procedureSlug}`}
-                    className="group flex items-baseline gap-4 p-5 border border-paper-300 bg-paper-50 hover:border-shell-400 hover:bg-shell-50 transition-colors"
+                    className="group flex items-baseline gap-4 p-5 border border-paper-300 bg-paper-50 hover:border-rose-400 hover:bg-rose-50 transition-colors"
                   >
                     <div className="flex-1">
-                      <p className="atlas-display text-lg text-ink-900 leading-tight group-hover:text-shell-700 transition-colors">
+                      <p className="atlas-display text-lg text-ink-900 leading-tight group-hover:text-rose-700 transition-colors">
                         {c.name}
                       </p>
                       <p className="atlas-label-tight text-ink-500 mt-1 uppercase">
@@ -137,7 +137,7 @@ export const ProceduresPage: React.FC = () => {
                     <ArrowUpRight
                       size={16}
                       strokeWidth={1.5}
-                      className="text-ink-300 group-hover:text-shell-500 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 flex-shrink-0"
+                      className="text-ink-300 group-hover:text-rose-500 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 flex-shrink-0"
                       aria-hidden="true"
                     />
                   </Link>
@@ -156,7 +156,7 @@ export const ProceduresPage: React.FC = () => {
               chapter="Complete index"
               title={
                 <>
-                  Every procedure <span className="text-shell-500">Dr. Sameera performs</span>.
+                  Every procedure <span className="text-rose-500">Dr. Sameera performs</span>.
                 </>
               }
               lede="Filter by discipline below, or browse the full list."
@@ -208,7 +208,7 @@ export const ProceduresPage: React.FC = () => {
         chapter="Not sure which one?"
         heading={
           <>
-            Unsure which procedure you need? <span className="text-shell-300">Start with a consultation.</span>
+            Unsure which procedure you need? <span className="text-rose-300">Start with a consultation.</span>
           </>
         }
         body="A consultation exists for exactly this — to examine, explain, and tell you whether surgery is the right path, and which one."

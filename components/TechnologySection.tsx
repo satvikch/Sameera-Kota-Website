@@ -15,7 +15,7 @@ export const TechnologySection: React.FC = () => {
             chapter="Equipment"
             title={
               <>
-                Tools chosen for the <span className="text-shell-500">patient</span>, not the brochure.
+                Tools chosen for the <span className="text-rose-500">patient</span>, not the brochure.
               </>
             }
             lede="A short, honest list. Each item is here because it changes how surgery feels, or how recovery goes."
@@ -34,7 +34,7 @@ export const TechnologySection: React.FC = () => {
               {site.technology.map((item, i) => (
                 <li
                   key={item.title}
-                  className="grid grid-cols-1 md:grid-cols-[6rem_1fr_2fr] gap-x-8 gap-y-3 px-6 py-8 border-b border-paper-300 last:border-b-0 hover:bg-shell-50 transition-colors"
+                  className="grid grid-cols-1 md:grid-cols-[6rem_1fr_2fr] gap-x-8 gap-y-3 px-6 py-8 border-b border-paper-300 last:border-b-0 hover:bg-rose-50 transition-colors"
                 >
                   <span className="font-mono text-xs tracking-[0.12em] text-ink-500 md:self-start">
                     {String(i + 1).padStart(2, '0')}

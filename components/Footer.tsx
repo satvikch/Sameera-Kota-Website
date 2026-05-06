@@ -70,7 +70,7 @@ export const Footer: React.FC = () => {
             <p className="atlas-label mb-4">Contact</p>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href={`tel:${p.phone}`} className="font-mono text-ink-900 hover:text-shell-600">
+                <a href={`tel:${p.phone}`} className="font-mono text-ink-900 hover:text-rose-600">
                   {p.phoneDisplay}
                 </a>
               </li>
@@ -79,13 +79,13 @@ export const Footer: React.FC = () => {
                   href={`https://wa.me/${p.whatsapp}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-ink-900 hover:text-shell-600"
+                  className="text-ink-900 hover:text-rose-600"
                 >
                   WhatsApp us
                 </a>
               </li>
               <li>
-                <a href={`mailto:${p.email}`} className="text-ink-900 hover:text-shell-600">
+                <a href={`mailto:${p.email}`} className="text-ink-900 hover:text-rose-600">
                   {p.email}
                 </a>
               </li>
@@ -94,7 +94,7 @@ export const Footer: React.FC = () => {
                   href={p.mapDirectionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-ink-900 hover:text-shell-600"
+                  className="text-ink-900 hover:text-rose-600"
                 >
                   Get directions
                 </a>

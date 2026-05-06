@@ -134,7 +134,7 @@ function ProceduresNavItem() {
                 to="/procedures"
                 role="menuitem"
                 onClick={() => setOpen(false)}
-                className="font-mono text-[10px] tracking-[0.16em] uppercase text-ink-500 hover:text-shell-600 border-b border-ink-300 hover:border-shell-500 pb-0.5"
+                className="font-mono text-[10px] tracking-[0.16em] uppercase text-ink-500 hover:text-rose-600 border-b border-ink-300 hover:border-rose-500 pb-0.5"
               >
                 See overview ↗
               </Link>
@@ -146,13 +146,13 @@ function ProceduresNavItem() {
                     to={`/procedures/${p.slug}`}
                     role="menuitem"
                     onClick={() => setOpen(false)}
-                    className="group flex items-baseline gap-4 px-5 py-2.5 text-sm text-ink-900 hover:bg-shell-50 hover:text-shell-700 transition-colors"
+                    className="group flex items-baseline gap-4 px-5 py-2.5 text-sm text-ink-900 hover:bg-rose-50 hover:text-rose-700 transition-colors"
                   >
-                    <span className="font-mono text-[10px] tracking-[0.08em] text-ink-300 w-7 flex-shrink-0 group-hover:text-shell-500">
+                    <span className="font-mono text-[10px] tracking-[0.08em] text-ink-300 w-7 flex-shrink-0 group-hover:text-rose-500">
                       {String(i + 1).padStart(2, '0')}
                     </span>
                     <span className="flex-1 leading-snug">{p.title}</span>
-                    <span className="atlas-label-tight text-ink-300 group-hover:text-shell-500 flex-shrink-0">
+                    <span className="atlas-label-tight text-ink-300 group-hover:text-rose-500 flex-shrink-0">
                       {p.category}
                     </span>
                   </Link>
@@ -239,13 +239,13 @@ export const HeaderSticky: React.FC = () => {
         <div className="hidden md:flex items-center gap-4">
           <a
             href={`tel:${site.doctor.practice.phone}`}
-            className="hidden lg:inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.08em] text-ink-700 hover:text-shell-600 transition-colors"
+            className="hidden lg:inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.08em] text-ink-700 hover:text-rose-600 transition-colors"
           >
             {site.doctor.practice.phoneDisplay}
           </a>
           <Link
             to="/contact"
-            className="inline-flex items-center h-10 px-5 bg-ink-900 text-paper-100 text-sm tracking-tight hover:bg-forest-500 transition-colors"
+            className="inline-flex items-center h-10 px-5 bg-ink-900 text-paper-100 text-sm tracking-tight hover:bg-oxblood-500 transition-colors"
           >
             Book consultation
           </Link>

@@ -21,7 +21,7 @@ export const Process: React.FC = () => {
             chapter="What to expect"
             title={
               <>
-                From the first call to the <span className="text-shell-500">final review</span>.
+                From the first call to the <span className="text-rose-500">final review</span>.
               </>
             }
             lede="Five stages. Each one with written instructions you take home at the end of it."
@@ -45,7 +45,7 @@ export const Process: React.FC = () => {
                         'group w-full text-left px-5 py-8 transition-colors h-full',
                         isActive
                           ? 'bg-ink-900 text-paper-100'
-                          : 'bg-paper-50 hover:bg-shell-50'
+                          : 'bg-paper-50 hover:bg-rose-50'
                       )}
                     >
                       <span
