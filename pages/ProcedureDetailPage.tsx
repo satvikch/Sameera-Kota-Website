@@ -36,7 +36,7 @@ export const ProcedureDetailPage: React.FC = () => {
 
   return (
     <>
-      <section className="atlas-section bg-paper-100 border-b border-ink-900/10">
+      <section className="atlas-section">
         <div className="atlas-container">
           <Reveal>
             <Link
@@ -142,7 +142,7 @@ export const ProcedureDetailPage: React.FC = () => {
                     <div className="flex items-start gap-4">
                       <AlertTriangle size={20} strokeWidth={1.5} className="text-signal mt-1 flex-shrink-0" aria-hidden="true" />
                       <div>
-                        <p className="atlas-label mb-3" style={{ color: '#B7301F' }}>
+                        <p className="atlas-label mb-3" style={{ color: '#C2342B' }}>
                           Honest risks
                         </p>
                         <p className="text-ink-700 leading-relaxed max-w-prose">{d.honestRisks}</p>

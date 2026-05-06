@@ -44,7 +44,7 @@ export const ProceduresPage: React.FC = () => {
   return (
     <>
       {/* ───────────────────── 1 · Page heading ───────────────────── */}
-      <section className="atlas-section bg-paper-100 border-b border-paper-300">
+      <section className="atlas-section">
         <div className="atlas-container">
           <Reveal>
             <SectionHeading
@@ -62,7 +62,7 @@ export const ProceduresPage: React.FC = () => {
       </section>
 
       {/* ───────────────────── 2 · Intro — why minimally invasive ───────────────────── */}
-      <section className="atlas-section bg-paper-200 border-b border-paper-300">
+      <section className="atlas-section bg-paper-200">
         <div className="atlas-container">
           <Reveal>
             <div className="grid gap-y-10 lg:grid-cols-12 gap-x-12 items-start">
@@ -104,7 +104,7 @@ export const ProceduresPage: React.FC = () => {
       </section>
 
       {/* ───────────────────── 3 · Conditions-first navigation ───────────────────── */}
-      <section className="atlas-section bg-paper-100 border-b border-paper-300">
+      <section className="atlas-section">
         <div className="atlas-container">
           <Reveal>
             <SectionHeading
@@ -149,7 +149,7 @@ export const ProceduresPage: React.FC = () => {
       </section>
 
       {/* ───────────────────── 4 · Procedure grid with filter ───────────────────── */}
-      <section className="atlas-section bg-paper-50 border-b border-paper-300">
+      <section className="atlas-section">
         <div className="atlas-container">
           <Reveal>
             <SectionHeading

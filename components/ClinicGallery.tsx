@@ -9,7 +9,7 @@ import { Reveal } from './ui/Reveal';
  */
 export const ClinicGallery: React.FC = () => {
   return (
-    <section className="atlas-section bg-paper-200 border-t border-paper-300">
+    <section className="atlas-section bg-paper-200">
       <div className="atlas-container">
         <Reveal>
           <SectionHeading
@@ -29,10 +29,6 @@ export const ClinicGallery: React.FC = () => {
               const hasReal = photo.src && !photo.src.startsWith('{{');
               return (
                 <li key={i} className="atlas-plate bg-paper-50 relative">
-                  <span className="atlas-corner atlas-corner-tl" aria-hidden="true" />
-                  <span className="atlas-corner atlas-corner-tr" aria-hidden="true" />
-                  <span className="atlas-corner atlas-corner-bl" aria-hidden="true" />
-                  <span className="atlas-corner atlas-corner-br" aria-hidden="true" />
                   <div className="aspect-[4/3] bg-rose-50 overflow-hidden">
                     {hasReal ? (
                       <img

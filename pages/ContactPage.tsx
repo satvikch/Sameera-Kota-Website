@@ -71,7 +71,7 @@ export const ContactPage: React.FC = () => {
       <ContactSection />
 
       {/* ───────────────────── Before you arrive ───────────────────── */}
-      <section className="atlas-section bg-paper-200 border-t border-paper-300">
+      <section className="atlas-section bg-paper-200">
         <div className="atlas-container">
           <Reveal>
             <SectionHeading
@@ -94,10 +94,6 @@ export const ContactPage: React.FC = () => {
                     key={col.title}
                     className="atlas-plate bg-paper-50 relative p-7"
                   >
-                    <span className="atlas-corner atlas-corner-tl" aria-hidden="true" />
-                    <span className="atlas-corner atlas-corner-tr" aria-hidden="true" />
-                    <span className="atlas-corner atlas-corner-bl" aria-hidden="true" />
-                    <span className="atlas-corner atlas-corner-br" aria-hidden="true" />
                     <span className="flex h-10 w-10 items-center justify-center border border-ink-900 bg-paper-100 text-ink-900 mb-5">
                       <Icon size={16} strokeWidth={1.5} aria-hidden="true" />
                     </span>

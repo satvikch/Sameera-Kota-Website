@@ -8,7 +8,7 @@ import { Reveal } from './ui/Reveal';
  */
 export const TechnologySection: React.FC = () => {
   return (
-    <section className="atlas-section bg-paper-100 border-t border-paper-300">
+    <section className="atlas-section">
       <div className="atlas-container">
         <Reveal>
           <SectionHeading

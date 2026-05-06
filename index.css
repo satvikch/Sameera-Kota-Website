@@ -3,36 +3,36 @@
    ──────────────────────────────────────────────────────────── */
 
 :root {
-  /* Atelier Blush — paper & ink */
-  --paper-50:  #FDF9F7;
-  --paper-100: #F8EFEA;
-  --paper-200: #F1E2DB;
-  --paper-300: #E5CFC5;
-  --paper-400: #CBAFA2;
-  --ink-300: #8E7770;
-  --ink-500: #5C4641;
-  --ink-700: #2E1F1B;
-  --ink-900: #1A100E;
+  /* Petal Wash — paper & ink */
+  --paper-50:  #FDFBFA;
+  --paper-100: #FFFFFF;
+  --paper-200: #FBE8E5;
+  --paper-300: #EADFD9;
+  --paper-400: #C9B8B0;
+  --ink-300: #9C8590;
+  --ink-500: #6B5260;
+  --ink-700: #3A2730;
+  --ink-900: #1F1418;
   /* Rose — feature pink */
-  --rose-50:  #FBEBE5;
-  --rose-100: #F6D7CC;
-  --rose-200: #ECB7A6;
-  --rose-300: #DD9381;
-  --rose-400: #C97366;
-  --rose-500: #B25551;
-  --rose-600: #8E3E3E;
-  --rose-700: #6B2D2F;
-  --rose-800: #4A1F22;
-  --rose-900: #2A1213;
-  /* Oxblood — deep secondary anchor */
-  --oxblood-50:  #F2E3DF;
-  --oxblood-100: #E0BFB8;
-  --oxblood-200: #C28983;
-  --oxblood-500: #6E2A28;
-  --oxblood-700: #4A1A1A;
-  --oxblood-900: #2A0F10;
-  /* Cherry-burgundy emergency */
-  --signal: #B7301F;
+  --rose-50:  #FFF1F4;
+  --rose-100: #FFDCE3;
+  --rose-200: #FBB8C5;
+  --rose-300: #F38BA1;
+  --rose-400: #E36482;
+  --rose-500: #C94668;
+  --rose-600: #A4304F;
+  --rose-700: #7A2238;
+  --rose-800: #501623;
+  --rose-900: #2B0C13;
+  /* Peony — secondary wash */
+  --peony-50:  #F6EEFF;
+  --peony-100: #E9DAFB;
+  --peony-300: #B89BE0;
+  --peony-600: #6B4D9A;
+  /* Cream — fourth wash */
+  --cream-100: #FFF6E8;
+  /* Cherry emergency */
+  --signal: #C2342B;
 }
 
 html {
@@ -48,17 +48,7 @@ body {
   font-variation-settings: "wght" 400;
 }
 
-/* Paper grain — subtle fibre, not decorative noise */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.07;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 320'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' seed='7'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-}
+/* Petal Wash — global decorative blob layer mounted in Layout.tsx */
 
 /* ──────────── Containers & rhythm ──────────── */
 
@@ -104,14 +94,16 @@ body::before {
   letter-spacing: 0.12em;
 }
 
-/* Chapter mark — used before section titles */
+/* Chapter mark — used before section titles. Italic Commissioner — softer than mono. */
 .atlas-chapter {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--rose-600);
-  font-weight: 500;
+  font-family: Commissioner, sans-serif;
+  font-style: italic;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  color: var(--rose-700);
+  font-weight: 400;
+  display: flex;
+  align-items: center;
 }
 
 /* Figure caption — used under diagrams, images */
@@ -149,13 +141,13 @@ body::before {
   width: 100%;
 }
 
-/* Short lead rule (prefix before chapter marks) */
+/* Short lead rule (prefix before chapter marks) — softer for Petal Wash */
 .atlas-lead-rule {
   display: inline-block;
   vertical-align: middle;
-  width: 2rem;
+  width: 1.75rem;
   height: 1px;
-  background-color: currentColor;
+  background-color: var(--rose-300);
   margin-right: 0.75rem;
 }
 
@@ -194,7 +186,7 @@ body::before {
   position: absolute;
   width: 12px;
   height: 12px;
-  border: 1px solid var(--ink-900);
+  border: 1px solid var(--rose-300);
 }
 .atlas-corner-tl { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
 .atlas-corner-tr { top: -1px; right: -1px; border-left: 0; border-bottom: 0; }
@@ -212,7 +204,7 @@ body::before {
 /* ──────────── Focus + accessibility ──────────── */
 
 :focus-visible {
-  outline: 2px solid var(--oxblood-500);
+  outline: 2px solid var(--rose-500);
   outline-offset: 3px;
   border-radius: 1px;
 }
@@ -240,5 +232,5 @@ body::before {
 }
 
 @media print {
-  body::before { display: none; }
+  .petal-wash { display: none; }
 }

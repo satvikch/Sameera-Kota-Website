@@ -4,6 +4,7 @@ import { HeaderSticky } from './HeaderSticky';
 import { EmergencyBanner } from './EmergencyBannerSticky';
 import { MobileStickyCTA } from './MobileStickyCTA';
 import { Footer } from './Footer';
+import { PetalWash } from './PetalWash';
 
 export const Layout: React.FC = () => {
   const { pathname } = useLocation();
@@ -12,7 +13,8 @@ export const Layout: React.FC = () => {
   }, [pathname]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-paper-100 text-ink-900">
+    <div className="min-h-screen flex flex-col text-ink-900 relative isolate">
+      <PetalWash />
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[70] focus:bg-ink-900 focus:text-paper-100 focus:px-4 focus:py-2 focus:font-mono focus:text-xs focus:tracking-[0.16em] focus:uppercase"

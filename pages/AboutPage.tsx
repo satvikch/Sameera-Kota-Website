@@ -18,7 +18,7 @@ export const AboutPage: React.FC = () => {
   return (
     <>
       {/* ───────────────────── 1 · Page heading ───────────────────── */}
-      <section className="atlas-section bg-paper-100 border-b border-paper-300">
+      <section className="atlas-section">
         <div className="atlas-container">
           <Reveal>
             <p className="atlas-chapter mb-6">
@@ -64,9 +64,9 @@ export const AboutPage: React.FC = () => {
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center" aria-hidden="true">
                       <svg viewBox="0 0 400 500" className="w-full h-full">
-                        <rect width="400" height="500" fill="#FBEBE5" />
-                        <line x1="60" y1="120" x2="340" y2="120" stroke="#C97366" strokeWidth="0.5" />
-                        <line x1="60" y1="380" x2="340" y2="380" stroke="#C97366" strokeWidth="0.5" />
+                        <rect width="400" height="500" fill="#FFF1F4" />
+                        <line x1="60" y1="120" x2="340" y2="120" stroke="#F38BA1" strokeWidth="0.5" />
+                        <line x1="60" y1="380" x2="340" y2="380" stroke="#F38BA1" strokeWidth="0.5" />
                         <text
                           x="200"
                           y="290"
@@ -74,7 +74,7 @@ export const AboutPage: React.FC = () => {
                           fontFamily="Bricolage Grotesque, sans-serif"
                           fontSize="210"
                           fontWeight="500"
-                          fill="#1A100E"
+                          fill="#1F1418"
                           letterSpacing="-8"
                         >
                           SK
@@ -86,7 +86,7 @@ export const AboutPage: React.FC = () => {
                           fontFamily="JetBrains Mono, monospace"
                           fontSize="9"
                           letterSpacing="2"
-                          fill="#5C4641"
+                          fill="#6B5260"
                         >
                           PORTRAIT · TO BE COMMISSIONED
                         </text>
@@ -138,7 +138,7 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* ───────────────────── 3 · Approach to care ───────────────────── */}
-      <section className="atlas-section bg-paper-200 border-t border-paper-300">
+      <section className="atlas-section bg-paper-200">
         <div className="atlas-container">
           <Reveal>
             <p className="atlas-chapter mb-5">
@@ -244,7 +244,7 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* ───────────────────── 5 · What a first consultation looks like ───────────────────── */}
-      <section className="atlas-section bg-paper-200 border-t border-paper-300">
+      <section className="atlas-section bg-paper-200">
         <div className="atlas-container">
           <Reveal>
             <div className="grid gap-12 lg:grid-cols-12">

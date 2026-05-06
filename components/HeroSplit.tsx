@@ -8,7 +8,7 @@ export const Hero: React.FC = () => {
   const hasRealPhoto = doctor.photo && !doctor.photo.startsWith('{{');
 
   return (
-    <section className="relative bg-paper-100 border-b border-ink-900/10">
+    <section className="relative">
       <div className="atlas-container pt-10 md:pt-16 pb-16 md:pb-24">
         {/* Masthead strip */}
         <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-ink-900">
@@ -40,7 +40,7 @@ export const Hero: React.FC = () => {
             <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:items-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-3 bg-ink-900 text-paper-100 h-14 px-6 hover:bg-oxblood-500 transition-colors group"
+                className="inline-flex items-center justify-center gap-3 bg-rose-400 text-paper-100 h-14 px-7 rounded-full shadow-[0_8px_20px_-10px_rgba(192,62,100,0.4)] hover:bg-rose-500 hover:shadow-[0_12px_28px_-12px_rgba(192,62,100,0.5)] transition-all group"
               >
                 <span className="text-sm tracking-tight">Book a consultation</span>
                 <ArrowUpRight
@@ -51,7 +51,7 @@ export const Hero: React.FC = () => {
               </Link>
               <Link
                 to="/procedures"
-                className="inline-flex items-center justify-center gap-3 border border-ink-900 text-ink-900 h-14 px-6 hover:bg-ink-900 hover:text-paper-100 transition-colors"
+                className="inline-flex items-center justify-center gap-3 border-[1.5px] border-rose-300 text-rose-600 bg-paper-100 h-14 px-7 rounded-full hover:border-rose-500 hover:text-rose-700 transition-colors"
               >
                 <span className="text-sm tracking-tight">See all procedures</span>
               </Link>
@@ -110,9 +110,9 @@ export const Hero: React.FC = () => {
                     aria-hidden="true"
                   >
                     <svg viewBox="0 0 400 500" className="w-full h-full">
-                      <rect width="400" height="500" fill="#FBEBE5" />
-                      <line x1="60" y1="120" x2="340" y2="120" stroke="#C97366" strokeWidth="0.5" />
-                      <line x1="60" y1="380" x2="340" y2="380" stroke="#C97366" strokeWidth="0.5" />
+                      <rect width="400" height="500" fill="#FFF1F4" />
+                      <line x1="60" y1="120" x2="340" y2="120" stroke="#F38BA1" strokeWidth="0.5" />
+                      <line x1="60" y1="380" x2="340" y2="380" stroke="#F38BA1" strokeWidth="0.5" />
                       <text
                         x="200"
                         y="290"
@@ -120,7 +120,7 @@ export const Hero: React.FC = () => {
                         fontFamily="Bricolage Grotesque, sans-serif"
                         fontSize="210"
                         fontWeight="500"
-                        fill="#1A100E"
+                        fill="#1F1418"
                         letterSpacing="-8"
                       >
                         SK
@@ -132,7 +132,7 @@ export const Hero: React.FC = () => {
                         fontFamily="JetBrains Mono, monospace"
                         fontSize="9"
                         letterSpacing="2"
-                        fill="#5C4641"
+                        fill="#6B5260"
                       >
                         PORTRAIT · TO BE COMMISSIONED
                       </text>

@@ -43,15 +43,11 @@ export const ProcedureCard: React.FC<ProcedureCardProps> = ({ procedure }) => {
   return (
     <Link
       to={`/procedures/${procedure.slug}`}
-      className="group atlas-plate bg-paper-50 relative flex flex-col h-full hover:bg-rose-50 transition-colors duration-300"
+      className="group relative flex flex-col h-full bg-paper-100 border border-paper-300 rounded-2xl overflow-hidden shadow-[0_4px_16px_-12px_rgba(60,30,50,0.10)] hover:shadow-[0_16px_36px_-16px_rgba(60,30,50,0.20)] hover:border-rose-200 transition-all duration-300"
     >
-      <span className="atlas-corner atlas-corner-tl" aria-hidden="true" />
-      <span className="atlas-corner atlas-corner-tr" aria-hidden="true" />
-      <span className="atlas-corner atlas-corner-bl" aria-hidden="true" />
-      <span className="atlas-corner atlas-corner-br" aria-hidden="true" />
 
       {/* Image region */}
-      <div className="aspect-[16/10] bg-rose-100 overflow-hidden relative border-b border-paper-300">
+      <div className="aspect-[16/10] bg-rose-100 overflow-hidden relative">
         {hasImage ? (
           <img
             src={procedure.imageUrl}
@@ -65,7 +61,7 @@ export const ProcedureCard: React.FC<ProcedureCardProps> = ({ procedure }) => {
             aria-hidden="true"
             style={{
               backgroundImage:
-                'linear-gradient(135deg, #FBEBE5 0%, #F6D7CC 60%, #ECB7A6 100%)',
+                'linear-gradient(135deg, #FFF1F4 0%, #FFDCE3 60%, #FBB8C5 100%)',
             }}
           >
             <Icon size={56} strokeWidth={1.1} className="text-rose-700 mb-3" />
@@ -109,7 +105,7 @@ interface FeaturedProceduresProps {
 export const FeaturedProcedures: React.FC<FeaturedProceduresProps> = ({ limit }) => {
   const items = typeof limit === 'number' ? site.procedures.slice(0, limit) : site.procedures;
   return (
-    <section id="procedures" className="atlas-section bg-paper-50 border-t border-paper-300">
+    <section id="procedures" className="atlas-section">
       <div className="atlas-container">
         <Reveal>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 pb-10 border-b border-ink-900">

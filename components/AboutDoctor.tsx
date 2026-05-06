@@ -17,7 +17,7 @@ export const AboutDoctor: React.FC = () => {
   const { doctor } = site;
 
   return (
-    <section id="about" className="atlas-section bg-paper-100 border-t border-paper-300">
+    <section id="about" className="atlas-section">
       <div className="atlas-container">
         <div className="grid gap-y-14 lg:grid-cols-12 gap-x-12 items-start">
           {/* Pull-quote plate — left */}

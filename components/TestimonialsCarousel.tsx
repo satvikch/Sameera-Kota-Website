@@ -12,7 +12,7 @@ export const TestimonialsCarousel: React.FC = () => {
   const hasTemplates = items.some((t) => t.isTemplate);
 
   return (
-    <section className="atlas-section bg-paper-50 border-t border-paper-300">
+    <section className="atlas-section">
       <div className="atlas-container">
         <Reveal>
           <SectionHeading

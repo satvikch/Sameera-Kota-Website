@@ -18,14 +18,14 @@ export const NotFoundPage: React.FC = () => {
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
           <Link
             to="/"
-            className="inline-flex items-center gap-3 bg-ink-900 text-paper-100 h-12 px-5 text-sm tracking-tight hover:bg-oxblood-500 transition-colors"
+            className="inline-flex items-center gap-3 bg-rose-400 text-paper-100 h-12 px-7 rounded-full shadow-[0_6px_16px_-8px_rgba(192,62,100,0.4)] text-sm tracking-tight hover:bg-rose-500 transition-colors"
           >
             <ArrowLeft size={16} strokeWidth={1.5} aria-hidden="true" />
             Home
           </Link>
           <Link
             to="/procedures"
-            className="inline-flex items-center justify-center border border-ink-900 text-ink-900 h-12 px-5 text-sm tracking-tight hover:bg-ink-900 hover:text-paper-100 transition-colors"
+            className="inline-flex items-center justify-center border-[1.5px] border-rose-300 text-rose-600 h-12 px-7 rounded-full hover:border-rose-500 hover:text-rose-700 transition-colors"
           >
             See all procedures
           </Link>

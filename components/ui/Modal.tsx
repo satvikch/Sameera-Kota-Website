@@ -57,16 +57,12 @@ export const Modal: React.FC<ModalProps> = ({
             role="dialog"
             aria-modal="true"
             aria-labelledby={title ? resolvedLabelId : undefined}
-            className="atlas-plate relative z-10 w-full max-w-2xl bg-paper-50 overflow-hidden"
+            className="relative z-10 w-full max-w-2xl bg-paper-100 rounded-3xl shadow-[0_24px_60px_-20px_rgba(60,30,50,0.3)] overflow-hidden"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 12 }}
             transition={{ duration: 0.3, ease: [0.2, 0.7, 0.2, 1] }}
           >
-            <span className="atlas-corner atlas-corner-tl" aria-hidden="true" />
-            <span className="atlas-corner atlas-corner-tr" aria-hidden="true" />
-            <span className="atlas-corner atlas-corner-bl" aria-hidden="true" />
-            <span className="atlas-corner atlas-corner-br" aria-hidden="true" />
             <div className="px-7 md:px-10 pt-8 md:pt-10 pb-5 border-b border-paper-300">
               <div className="flex items-start justify-between gap-6">
                 <div>

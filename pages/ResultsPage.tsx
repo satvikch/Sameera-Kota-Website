@@ -62,10 +62,6 @@ export const ResultsPage: React.FC = () => {
 
           <Reveal delay={0.2}>
             <div className="mt-14 atlas-plate bg-paper-50 relative">
-              <span className="atlas-corner atlas-corner-tl" aria-hidden="true" />
-              <span className="atlas-corner atlas-corner-tr" aria-hidden="true" />
-              <span className="atlas-corner atlas-corner-bl" aria-hidden="true" />
-              <span className="atlas-corner atlas-corner-br" aria-hidden="true" />
               <div className="aspect-[16/7] flex items-center justify-center text-center px-10">
                 <div>
                   <p className="atlas-label mb-4">Gallery — coming soon</p>

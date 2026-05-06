@@ -84,10 +84,6 @@ export const ContactSection: React.FC = () => {
             </div>
 
             <figure className="mt-10 atlas-plate overflow-hidden bg-paper-50">
-              <span className="atlas-corner atlas-corner-tl" aria-hidden="true" />
-              <span className="atlas-corner atlas-corner-tr" aria-hidden="true" />
-              <span className="atlas-corner atlas-corner-bl" aria-hidden="true" />
-              <span className="atlas-corner atlas-corner-br" aria-hidden="true" />
               <div className="aspect-[4/3] bg-paper-200">
                 <iframe
                   title={`Map showing ${p.clinicName}`}
@@ -117,10 +113,6 @@ export const ContactSection: React.FC = () => {
           {/* Intake form — right */}
           <Reveal delay={0.1} className="lg:col-span-7">
             <div className="atlas-plate bg-paper-50 relative">
-              <span className="atlas-corner atlas-corner-tl" aria-hidden="true" />
-              <span className="atlas-corner atlas-corner-tr" aria-hidden="true" />
-              <span className="atlas-corner atlas-corner-bl" aria-hidden="true" />
-              <span className="atlas-corner atlas-corner-br" aria-hidden="true" />
               <div className="px-6 md:px-10 py-6 border-b border-paper-300">
                 <p className="atlas-label">Consultation request</p>
               </div>

@@ -78,12 +78,8 @@ export const BookingForm: React.FC = () => {
     return (
       <div
         role="status"
-        className="border border-ink-900 bg-paper-50 p-8 text-center relative"
+        className="border border-paper-300 bg-paper-100 rounded-2xl shadow-[0_8px_24px_-16px_rgba(60,30,40,0.12)] p-8 text-center relative"
       >
-        <span className="atlas-corner atlas-corner-tl" aria-hidden="true" />
-        <span className="atlas-corner atlas-corner-tr" aria-hidden="true" />
-        <span className="atlas-corner atlas-corner-bl" aria-hidden="true" />
-        <span className="atlas-corner atlas-corner-br" aria-hidden="true" />
         <span className="inline-flex items-center justify-center w-11 h-11 bg-ink-900 text-paper-100 mb-5">
           <Check size={18} strokeWidth={1.8} aria-hidden="true" />
         </span>
@@ -215,7 +211,7 @@ export const BookingForm: React.FC = () => {
       <div className="flex flex-col sm:flex-row sm:items-center gap-6 pt-6 border-t border-paper-300">
         <button
           type="submit"
-          className="inline-flex items-center gap-3 bg-ink-900 text-paper-100 h-12 px-6 text-sm tracking-tight hover:bg-oxblood-500 transition-colors"
+          className="inline-flex items-center gap-3 bg-rose-400 text-paper-100 h-12 px-7 rounded-full shadow-[0_6px_16px_-8px_rgba(192,62,100,0.4)] text-sm tracking-tight hover:bg-rose-500 transition-colors"
         >
           <MessageCircle size={16} strokeWidth={1.5} aria-hidden="true" />
           Send note via WhatsApp

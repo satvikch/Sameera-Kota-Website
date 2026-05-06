@@ -122,12 +122,8 @@ function ProceduresNavItem() {
             transition={{ duration: 0.15 }}
             role="menu"
             aria-label="Procedures"
-            className="absolute top-full left-0 mt-1 min-w-[22rem] bg-paper-50 border border-paper-300 shadow-[0_12px_32px_rgba(23,20,16,0.1)] z-50"
+            className="absolute top-full left-0 mt-1 min-w-[22rem] bg-paper-100 border border-paper-300 rounded-2xl shadow-[0_16px_40px_-12px_rgba(60,30,50,0.14)] z-50 overflow-hidden"
           >
-            <span className="atlas-corner atlas-corner-tl" aria-hidden="true" />
-            <span className="atlas-corner atlas-corner-tr" aria-hidden="true" />
-            <span className="atlas-corner atlas-corner-bl" aria-hidden="true" />
-            <span className="atlas-corner atlas-corner-br" aria-hidden="true" />
             <div className="px-5 pt-5 pb-3 border-b border-paper-300 flex items-baseline justify-between">
               <p className="atlas-label">All procedures</p>
               <Link
@@ -245,7 +241,7 @@ export const HeaderSticky: React.FC = () => {
           </a>
           <Link
             to="/contact"
-            className="inline-flex items-center h-10 px-5 bg-ink-900 text-paper-100 text-sm tracking-tight hover:bg-oxblood-500 transition-colors"
+            className="inline-flex items-center h-10 px-5 bg-rose-400 text-paper-100 text-sm tracking-tight rounded-full shadow-[0_4px_12px_-6px_rgba(192,62,100,0.4)] hover:bg-rose-500 transition-colors"
           >
             Book consultation
           </Link>

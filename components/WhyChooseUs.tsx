@@ -10,7 +10,7 @@ import { Reveal } from './ui/Reveal';
  */
 export const WhyChooseUs: React.FC = () => {
   return (
-    <section className="atlas-section bg-paper-200 border-t border-paper-300 relative overflow-hidden">
+    <section className="atlas-section bg-paper-200 relative overflow-hidden">
       <div className="atlas-container">
         <Reveal>
           <SectionHeading

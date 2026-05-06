@@ -23,7 +23,7 @@ export const FAQAccordion: React.FC = () => {
   }, [filter]);
 
   return (
-    <section id="faq" className="atlas-section bg-paper-100 border-t border-paper-300">
+    <section id="faq" className="atlas-section">
       <div className="atlas-container">
         <Reveal>
           <SectionHeading
