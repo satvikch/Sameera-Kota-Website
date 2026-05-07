@@ -45,7 +45,7 @@ export const Process: React.FC = () => {
                         'group w-full text-left px-5 py-8 transition-colors h-full',
                         isActive
                           ? 'bg-ink-900 text-paper-100'
-                          : 'bg-paper-50 hover:bg-rose-50'
+                          : 'bg-paper-50 hover:bg-rose-100'
                       )}
                     >
                       <span

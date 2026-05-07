@@ -185,7 +185,7 @@ export const site = {
       title: 'Laser treatment for piles, fissures & fistula',
       category: 'Proctology',
       icon: 'Zap',
-      imageUrl: '{{PROCEDURE_IMAGE_LASER_PROCTOLOGY}}',
+      imageUrl: 'https://images.pexels.com/photos/7108110/pexels-photo-7108110.jpeg?auto=compress&cs=srgb&w=1200',
       imageAlt: 'Diode-laser proctology — an illustrative reference image',
       summary:
         'Diode-laser treatment for haemorrhoids, anal fissures and fistula — designed around the two things patients ask for most: less pain, and getting back to normal life quickly.',
@@ -261,7 +261,7 @@ export const site = {
       title: 'Laparoscopic hernia repair',
       category: 'Laparoscopy',
       icon: 'Shield',
-      imageUrl: '{{PROCEDURE_IMAGE_HERNIA}}',
+      imageUrl: 'https://images.pexels.com/photos/34415377/pexels-photo-34415377.jpeg?auto=compress&cs=srgb&w=1200',
       imageAlt: 'Laparoscopic hernia repair — an illustrative reference image',
       summary:
         'Keyhole repair of inguinal, umbilical, incisional and ventral hernias, reinforced with a mesh placed through small incisions — designed for structural strength and a quick return to activity.',
@@ -338,7 +338,7 @@ export const site = {
       title: 'Gallbladder surgery for gallstones',
       category: 'Laparoscopy',
       icon: 'Activity',
-      imageUrl: '{{PROCEDURE_IMAGE_GALLBLADDER}}',
+      imageUrl: 'https://images.pexels.com/photos/11674613/pexels-photo-11674613.jpeg?auto=compress&cs=srgb&w=1200',
       imageAlt: 'Laparoscopic gallbladder surgery — an illustrative reference image',
       summary:
         'Removal of a diseased gallbladder through four keyhole incisions — the standard treatment for symptomatic gallstones and gallbladder inflammation.',
@@ -414,7 +414,7 @@ export const site = {
       title: 'Appendix removal',
       category: 'Emergency',
       icon: 'Stethoscope',
-      imageUrl: '{{PROCEDURE_IMAGE_APPENDIX}}',
+      imageUrl: 'https://images.pexels.com/photos/26212702/pexels-photo-26212702.jpeg?auto=compress&cs=srgb&w=1200',
       imageAlt: 'Laparoscopic appendix removal — an illustrative reference image',
       summary:
         'Rapid, minimally invasive removal of an inflamed appendix — an emergency procedure where early treatment makes a big difference to the recovery.',
@@ -488,7 +488,7 @@ export const site = {
       title: 'Thyroid & breast surgery',
       category: "Women's Surgery",
       icon: 'HeartHandshake',
-      imageUrl: '{{PROCEDURE_IMAGE_THYROID_BREAST}}',
+      imageUrl: 'https://images.pexels.com/photos/7659876/pexels-photo-7659876.jpeg?auto=compress&cs=srgb&w=1200',
       imageAlt: 'Thyroid and breast surgery — an illustrative reference image',
       summary:
         'Careful, cosmetically-considerate surgery for thyroid nodules, goitres, breast lumps and suspicious breast lesions — with female-led consultation through every stage.',
@@ -564,7 +564,7 @@ export const site = {
       title: 'Diabetic foot surgery',
       category: 'Emergency',
       icon: 'Footprints',
-      imageUrl: '{{PROCEDURE_IMAGE_DIABETIC_FOOT}}',
+      imageUrl: 'https://images.pexels.com/photos/33934620/pexels-photo-33934620.jpeg?auto=compress&cs=srgb&w=1200',
       imageAlt: 'Diabetic foot surgery — an illustrative reference image',
       summary:
         'Prompt, conservative surgical care for diabetic foot ulcers, infections and gangrene — preserving as much of the foot as possible, and teaching you how to prevent it from recurring.',
@@ -633,7 +633,7 @@ export const site = {
       title: 'Skin & soft-tissue abscess',
       category: 'Emergency',
       icon: 'Droplets',
-      imageUrl: '{{PROCEDURE_IMAGE_SOFT_TISSUE}}',
+      imageUrl: 'https://images.pexels.com/photos/7108119/pexels-photo-7108119.jpeg?auto=compress&cs=srgb&w=1200',
       imageAlt: 'Soft-tissue abscess drainage — an illustrative reference image',
       summary:
         'Prompt drainage of skin and soft-tissue abscesses under local or short general anaesthesia — with a clear plan for preventing them from coming back.',

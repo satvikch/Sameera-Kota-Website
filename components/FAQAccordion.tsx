@@ -69,7 +69,7 @@ export const FAQAccordion: React.FC = () => {
                   onClick={() => setActive(isOpen ? null : id)}
                   aria-expanded={isOpen}
                   aria-controls={`${id}-panel`}
-                  className="w-full grid grid-cols-[3rem_1fr_2rem] md:grid-cols-[5rem_1fr_2rem] items-baseline gap-6 py-6 md:py-7 text-left hover:bg-rose-50 transition-colors px-1"
+                  className="w-full grid grid-cols-[3rem_1fr_2rem] md:grid-cols-[5rem_1fr_2rem] items-baseline gap-6 py-6 md:py-7 text-left hover:bg-rose-100 transition-colors px-1"
                 >
                   <span className="font-mono text-xs text-ink-500 tracking-[0.08em]">
                     {String(idx + 1).padStart(2, '0')}

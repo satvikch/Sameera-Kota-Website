@@ -43,7 +43,7 @@ export const ProcedureCard: React.FC<ProcedureCardProps> = ({ procedure }) => {
   return (
     <Link
       to={`/procedures/${procedure.slug}`}
-      className="group relative flex flex-col h-full bg-paper-100 border border-paper-300 rounded-2xl overflow-hidden shadow-[0_4px_16px_-12px_rgba(60,30,50,0.10)] hover:shadow-[0_16px_36px_-16px_rgba(60,30,50,0.20)] hover:border-rose-200 transition-all duration-300"
+      className="group relative flex flex-col h-full bg-paper-100 border border-paper-300 rounded-2xl overflow-hidden shadow-[0_4px_16px_-12px_rgba(60,30,50,0.10)] hover:shadow-[0_20px_40px_-16px_rgba(164,48,79,0.25)] hover:border-rose-400 transition-all duration-300"
     >
 
       {/* Image region */}

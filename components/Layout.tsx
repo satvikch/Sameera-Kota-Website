@@ -13,7 +13,7 @@ export const Layout: React.FC = () => {
   }, [pathname]);
 
   return (
-    <div className="min-h-screen flex flex-col text-ink-900 relative isolate">
+    <div className="min-h-screen flex flex-col text-ink-900 relative">
       <PetalWash />
       <a
         href="#main"

@@ -124,7 +124,7 @@ export const ProceduresPage: React.FC = () => {
                 <li key={c.id}>
                   <Link
                     to={`/procedures/${c.procedureSlug}`}
-                    className="group flex items-baseline gap-4 p-5 border border-paper-300 bg-paper-50 hover:border-rose-400 hover:bg-rose-50 transition-colors"
+                    className="group flex items-baseline gap-4 p-5 border border-paper-300 bg-paper-50 hover:border-rose-400 hover:bg-rose-100 transition-colors"
                   >
                     <div className="flex-1">
                       <p className="atlas-display text-lg text-ink-900 leading-tight group-hover:text-rose-700 transition-colors">

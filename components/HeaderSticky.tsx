@@ -142,7 +142,7 @@ function ProceduresNavItem() {
                     to={`/procedures/${p.slug}`}
                     role="menuitem"
                     onClick={() => setOpen(false)}
-                    className="group flex items-baseline gap-4 px-5 py-2.5 text-sm text-ink-900 hover:bg-rose-50 hover:text-rose-700 transition-colors"
+                    className="group flex items-baseline gap-4 px-5 py-2.5 text-sm text-ink-900 hover:bg-rose-100 hover:text-rose-700 transition-colors"
                   >
                     <span className="font-mono text-[10px] tracking-[0.08em] text-ink-300 w-7 flex-shrink-0 group-hover:text-rose-500">
                       {String(i + 1).padStart(2, '0')}
