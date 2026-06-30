@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Facebook, Star } from 'lucide-react';
+import { Instagram, Facebook, MapPin } from 'lucide-react';
 import { site } from '../content/site';
 
 export const Footer: React.FC = () => {
@@ -30,10 +30,10 @@ export const Footer: React.FC = () => {
                     href={socials.googleMaps}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Dr. Sameera K reviews on Google"
+                    aria-label="Dr. Sameera K on Google Maps"
                     className="flex h-9 w-9 items-center justify-center border border-ink-900 text-ink-900 hover:bg-ink-900 hover:text-paper-100 transition-colors"
                   >
-                    <Star size={16} strokeWidth={1.5} aria-hidden="true" />
+                    <MapPin size={16} strokeWidth={1.5} aria-hidden="true" />
                   </a>
                 )}
                 {socials.instagram && (

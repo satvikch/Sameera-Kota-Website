@@ -4,6 +4,7 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { site } from '../content/site';
 import { cn } from './ui/cn';
+import { Logo } from './ui/Logo';
 
 const NAV = [
   { to: '/', label: 'Home', short: 'Home', mark: '01', end: true, dropdown: false },
@@ -16,9 +17,7 @@ const NAV = [
 function Brandmark() {
   return (
     <Link to="/" className="group flex items-center gap-3" aria-label="Dr. Sameera K — home">
-      <span className="flex h-9 w-9 items-center justify-center border border-ink-900 bg-paper-50 font-mono text-[11px] tracking-[0.08em] text-ink-900">
-        SK
-      </span>
+      <Logo variant="plate" className="h-9 w-9 flex-shrink-0" />
       <span className="flex flex-col leading-[1.05]">
         <span className="atlas-display text-[1.05rem] text-ink-900">
           Dr. Sameera K

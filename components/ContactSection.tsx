@@ -91,7 +91,7 @@ export const ContactSection: React.FC = () => {
                   loading="lazy"
                   allowFullScreen
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-full border-0 grayscale contrast-110"
+                  className="w-full h-full border-0"
                 />
               </div>
               <div className="flex items-baseline justify-between px-4 py-2 border-t border-paper-300">

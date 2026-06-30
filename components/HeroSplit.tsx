@@ -1,12 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
+import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import { site } from '../content/site';
 import { assetUrl } from './ui/asset';
 
 export const Hero: React.FC = () => {
   const { doctor } = site;
   const hasRealPhoto = doctor.photo && !doctor.photo.startsWith('{{');
+
+  // Subtle parallax: the portrait drifts up as the hero scrolls. The slight
+  // scale gives the drift headroom so it never reveals an edge. Off for
+  // reduced-motion.
+  const reduced = useReducedMotion();
+  const { scrollY } = useScroll();
+  const portraitY = useTransform(scrollY, [0, 1000], ['0%', '-6%']);
 
   return (
     <section className="relative">
@@ -96,10 +104,11 @@ export const Hero: React.FC = () => {
               <span className="atlas-corner atlas-corner-br" aria-hidden="true" />
               <div className="aspect-[4/5] bg-rose-50 relative overflow-hidden">
                 {hasRealPhoto ? (
-                  <img
+                  <motion.img
                     src={assetUrl(doctor.photo)}
                     alt={doctor.photoAlt}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover will-change-transform"
+                    style={{ y: reduced ? 0 : portraitY, scale: reduced ? 1 : 1.12 }}
                     loading="eager"
                     width={640}
                     height={800}

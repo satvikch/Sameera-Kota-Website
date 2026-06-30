@@ -252,6 +252,21 @@ p {
   }
 }
 
+/* Lenis smooth scroll — these classes are applied to <html> on the client. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
 @media print {
   .petal-wash { display: none; }
 }

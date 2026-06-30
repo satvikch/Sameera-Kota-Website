@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
+import { useReducedMotion } from 'framer-motion';
+import Lenis from 'lenis';
 import { HeaderSticky } from './HeaderSticky';
 import { EmergencyBanner } from './EmergencyBannerSticky';
 import { MobileStickyCTA } from './MobileStickyCTA';
@@ -35,9 +37,37 @@ export const Layout: React.FC = () => {
   const mainRef = useRef<HTMLElement>(null);
   const hasMounted = useRef(false);
   const [announcement, setAnnouncement] = useState('');
+  const reduced = useReducedMotion();
+  const lenisRef = useRef<Lenis | null>(null);
+
+  // Smooth scroll — desktop wheel only (Lenis leaves touch scrolling native, so
+  // mobile is unaffected). Disabled entirely for prefers-reduced-motion, and
+  // torn down on unmount so it never leaks a RAF loop.
+  useEffect(() => {
+    if (reduced) return;
+    const lenis = new Lenis({
+      duration: 1.1,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
+    lenisRef.current = lenis;
+    let raf = 0;
+    const loop = (time: number) => {
+      lenis.raf(time);
+      raf = requestAnimationFrame(loop);
+    };
+    raf = requestAnimationFrame(loop);
+    return () => {
+      cancelAnimationFrame(raf);
+      lenis.destroy();
+      lenisRef.current = null;
+    };
+  }, [reduced]);
 
   useEffect(() => {
-    window.scrollTo({ top: 0 });
+    // Jump to top instantly on navigation — via Lenis when active so it doesn't
+    // animate the jump or fight the focus move below.
+    if (lenisRef.current) lenisRef.current.scrollTo(0, { immediate: true });
+    else window.scrollTo({ top: 0 });
     // Skip the very first render: on initial load the natural tab order from the
     // top of the document is correct, and we must not steal focus during hydration.
     if (!hasMounted.current) {
