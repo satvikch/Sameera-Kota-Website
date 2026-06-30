@@ -3,6 +3,8 @@ import { Lock, Camera, HeartHandshake } from 'lucide-react';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { Reveal } from '../components/ui/Reveal';
 import { CTABanner } from '../components/CTABanner';
+import { Seo } from '../components/ui/Seo';
+import { breadcrumbLd } from '../components/ui/jsonld';
 
 const NOTES = [
   {
@@ -28,6 +30,12 @@ const NOTES = [
 export const ResultsPage: React.FC = () => {
   return (
     <>
+      <Seo
+        title="Patient Results · Dr. Sameera K, Surgeon in Hyderabad"
+        description="Before-and-after surgical outcomes will be published here once a consented, representative photo set is ready. We won't publish results prematurely."
+        path="/results"
+        jsonLd={breadcrumbLd([{ label: 'Home', path: '/' }, { label: 'Results' }])}
+      />
       <section className="atlas-section bg-paper-100">
         <div className="atlas-container">
           <Reveal>

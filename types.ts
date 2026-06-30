@@ -2,7 +2,8 @@ export type ProcedureCategory =
   | 'Proctology'
   | 'Laparoscopy'
   | 'Emergency'
-  | "Women's Surgery";
+  | "Women's Surgery"
+  | 'Vascular';
 
 export interface ProcedureSessionInfo {
   duration: string;
@@ -104,7 +105,26 @@ export interface Testimonial {
   text: string;
   rating: number;
   dateLabel: string;
-  isTemplate: boolean;
+  /** True only for placeholder/example copy. Omit for real reviews. */
+  isTemplate?: boolean;
+  /** Where a real review was left, for honest attribution (e.g. 'Google'). */
+  source?: 'Google';
+}
+
+export interface Video {
+  id: string;
+  /** YouTube video id (the v= value). */
+  youtubeId: string;
+  /** Clean, patient-facing display title (not the raw YouTube title). */
+  title: string;
+  description: string;
+  /** Channel the video lives on, shown as "As featured on …". */
+  source: string;
+  category: 'explainer' | 'interview';
+  /** Primary spoken language, for an honest tag + the lang attribute. */
+  lang?: 'te' | 'en';
+  /** If set, the video is shown contextually on that procedure's page. */
+  procedureSlug?: string;
 }
 
 export interface FAQ {

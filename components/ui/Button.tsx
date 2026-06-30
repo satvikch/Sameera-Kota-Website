@@ -17,7 +17,7 @@ const base =
 
 const variants: Record<Variant, string> = {
   primary:
-    'bg-rose-400 text-paper-100 hover:bg-rose-500 shadow-[0_8px_20px_-10px_rgba(192,62,100,0.4)] hover:shadow-[0_12px_28px_-12px_rgba(192,62,100,0.5)]',
+    'bg-rose-500 text-paper-100 hover:bg-rose-600 shadow-[0_8px_20px_-10px_rgba(192,62,100,0.4)] hover:shadow-[0_12px_28px_-12px_rgba(192,62,100,0.5)]',
   rose:
     'bg-rose-500 text-paper-100 hover:bg-rose-600 shadow-[0_8px_20px_-10px_rgba(192,62,100,0.45)]',
   outline:

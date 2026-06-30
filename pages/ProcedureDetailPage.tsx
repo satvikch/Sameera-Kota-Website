@@ -4,6 +4,12 @@ import { ArrowLeft, Clock, Hotel, Home, Briefcase, Sparkles, AlertTriangle } fro
 import { site } from '../content/site';
 import { Reveal } from '../components/ui/Reveal';
 import { CTABanner } from '../components/CTABanner';
+import { Seo } from '../components/ui/Seo';
+import { Breadcrumbs } from '../components/ui/Breadcrumbs';
+import { Byline } from '../components/Byline';
+import { VideoEmbed } from '../components/ui/VideoEmbed';
+import type { Video } from '../types';
+import { medicalProcedureLd, faqPageLd, breadcrumbLd } from '../components/ui/jsonld';
 
 export const ProcedureDetailPage: React.FC = () => {
   const { slug } = useParams();
@@ -14,6 +20,11 @@ export const ProcedureDetailPage: React.FC = () => {
     return (
       <section className="atlas-section bg-paper-100">
         <div className="atlas-container text-center max-w-xl mx-auto">
+          <Seo
+            title="Procedure not found · Dr. Sameera K"
+            description="That procedure page could not be found. Browse the full list of laparoscopic and laser procedures offered by Dr. Sameera K in Kothapet, Hyderabad."
+            path="/procedures"
+          />
           <p className="font-mono text-[11px] tracking-[0.18em] uppercase text-rose-600 mb-4">
             Procedure not found
           </p>
@@ -33,12 +44,36 @@ export const ProcedureDetailPage: React.FC = () => {
   }
 
   const d = procedure.detailed;
+  const video = (site.videos as readonly Video[]).find((v) => v.procedureSlug === procedure.slug);
 
   return (
     <>
+      <Seo
+        title={`${procedure.title} · Dr. Sameera K, Kothapet`}
+        description={procedure.summary}
+        path={`/procedures/${procedure.slug}`}
+        type="article"
+        jsonLd={[
+          medicalProcedureLd(procedure),
+          ...(d ? [faqPageLd(d.faqs)] : []),
+          breadcrumbLd([
+            { label: 'Home', path: '/' },
+            { label: 'Procedures', path: '/procedures' },
+            { label: procedure.title },
+          ]),
+        ]}
+      />
       <section className="atlas-section">
         <div className="atlas-container">
           <Reveal>
+            <Breadcrumbs
+              className="mb-6"
+              trail={[
+                { label: 'Home', to: '/' },
+                { label: 'Procedures', to: '/procedures' },
+                { label: procedure.title },
+              ]}
+            />
             <Link
               to="/procedures"
               className="inline-flex items-center gap-2 text-sm text-ink-500 hover:text-ink-900 mb-10"
@@ -101,6 +136,28 @@ export const ProcedureDetailPage: React.FC = () => {
                   <article>
                     <p className="atlas-label mb-5">How the surgery works</p>
                     <p className="text-ink-700 leading-relaxed max-w-prose">{d.howItWorks}</p>
+                  </article>
+                </Reveal>
+              )}
+
+              {video && (
+                <Reveal>
+                  <article>
+                    <p className="atlas-label mb-5">Watch Dr. Sameera explain it</p>
+                    <figure lang={video.lang}>
+                      <VideoEmbed
+                        youtubeId={video.youtubeId}
+                        title={video.title}
+                        className="border border-paper-300"
+                      />
+                      <figcaption className="mt-4">
+                        <p className="atlas-display text-lg text-ink-900 leading-tight">{video.title}</p>
+                        <p className="mt-3 font-mono text-[10px] tracking-[0.18em] uppercase text-ink-500">
+                          As featured on {video.source}
+                          {video.lang === 'te' ? ' · Telugu' : ''}
+                        </p>
+                      </figcaption>
+                    </figure>
                   </article>
                 </Reveal>
               )}
@@ -202,6 +259,7 @@ export const ProcedureDetailPage: React.FC = () => {
                   </article>
                 </Reveal>
               )}
+              <Byline />
             </div>
 
             {/* Sticky sidebar — at-a-glance table */}

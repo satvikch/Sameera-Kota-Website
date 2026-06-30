@@ -55,7 +55,7 @@ export const BookingForm: React.FC = () => {
     if (Object.keys(next).length > 0) return;
 
     const text = [
-      `Hello Dr. Sameera Kota —`,
+      `Hello Dr. Sameera K —`,
       `I would like to request a consultation.`,
       ``,
       `Full name: ${fields.name}`,
@@ -211,7 +211,7 @@ export const BookingForm: React.FC = () => {
       <div className="flex flex-col sm:flex-row sm:items-center gap-6 pt-6 border-t border-paper-300">
         <button
           type="submit"
-          className="inline-flex items-center gap-3 bg-rose-400 text-paper-100 h-12 px-7 rounded-full shadow-[0_6px_16px_-8px_rgba(192,62,100,0.4)] text-sm tracking-tight hover:bg-rose-500 transition-colors"
+          className="inline-flex items-center gap-3 bg-rose-500 text-paper-100 h-12 px-7 rounded-full shadow-[0_6px_16px_-8px_rgba(192,62,100,0.4)] text-sm tracking-tight hover:bg-rose-600 transition-colors"
         >
           <MessageCircle size={16} strokeWidth={1.5} aria-hidden="true" />
           Send note via WhatsApp

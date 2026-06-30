@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Dr. Sameera K — General, Laparoscopic and Laser Surgeon, Susheela Hospital, Kothapet, Hyderabad">
+  <defs>
+    <linearGradient id="wash" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFDCE3"/>
+      <stop offset="1" stop-color="#FBE8E5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#FFFFFF"/>
+  <circle cx="1090" cy="70" r="240" fill="url(#wash)" opacity="0.85"/>
+  <circle cx="1170" cy="560" r="150" fill="#FFF1F4"/>
+  <g stroke="#F38BA1" stroke-width="2" fill="none">
+    <path d="M64 64 h36 M64 64 v36"/>
+    <path d="M1136 566 h-36 M1136 566 v-36"/>
+  </g>
+  <line x1="80" y1="180" x2="128" y2="180" stroke="#C94668" stroke-width="3"/>
+  <text x="144" y="187" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="22" letter-spacing="4" fill="#7A2238">SUSHEELA HOSPITAL · KOTHAPET, HYDERABAD</text>
+  <text x="78" y="320" font-family="'Bricolage Grotesque', Georgia, 'Times New Roman', serif" font-size="116" font-weight="600" letter-spacing="-3" fill="#1F1418">Dr. Sameera K</text>
+  <text x="80" y="392" font-family="Commissioner, system-ui, -apple-system, Helvetica, Arial, sans-serif" font-size="40" fill="#3A2730">General, <tspan fill="#A4304F">Laparoscopic &amp; Laser</tspan> Surgeon</text>
+  <text x="80" y="470" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="28" letter-spacing="2" fill="#6B5260">MBBS · MS (General Surgery) · FMAS · FISCP</text>
+  <line x1="80" y1="540" x2="1120" y2="540" stroke="#EADFD9" stroke-width="2"/>
+  <text x="80" y="582" font-family="Commissioner, system-ui, -apple-system, Helvetica, Arial, sans-serif" font-size="26" fill="#6B5260">Minimally invasive surgery · hernia, gallstones, piles, thyroid &amp; breast</text>
+  <text x="1120" y="582" text-anchor="end" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="24" fill="#C94668">drsameerakota.com</text>
+</svg>

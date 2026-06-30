@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A single-page-app marketing website for **Dr. Sameera K** — a consultant general, laparoscopic and laser surgeon practising at **Susheela Hospital, 11-12-147, Road No. 3, SRK Puram, Kothapet, Hyderabad**. She holds **MBBS, MS (General Surgery), FMAS, FISCP** and treats hernia, gallstones, appendicitis, piles / fissures / fistula, breast lumps, thyroid nodules, diabetic foot and soft-tissue abscesses.
 
-Built with React 19, TypeScript, Vite 6, Tailwind CSS (CDN), Framer Motion and Lucide React. Content lives in a single `content/site.ts` file. No backend.
+Built with React 19, TypeScript, Vite 6, Tailwind CSS (compiled at build), Framer Motion and Lucide React. The site is **prerendered to static HTML per route** with `vite-react-ssg` (so content + per-route meta + JSON-LD are crawlable). Content lives in a single `content/site.ts` file. No backend.
 
 The live reference site is `https://drsameerakota.com` — that is the source of truth for name, clinic, address, phone and email.
 
@@ -19,17 +19,18 @@ The live reference site is `https://drsameerakota.com` — that is the source of
 
 ## Deployment
 
-No CI workflow is checked into the repo yet. The Vite `base` is default (`/`). A `public/404.html` SPA fallback exists so deep-linked routes survive hosts that don't rewrite unknown paths (e.g. GitHub Pages project sites).
+GitHub Actions (`.github/workflows/deploy.yml`) builds and deploys to GitHub Pages. The build is environment-switched by `VITE_DEPLOY_TARGET`: **preview** (the workflow sets this) → `base: '/Sameera-Kota-Website/'` + `noindex`; **production/handover** (default) → `base: '/'` for the apex domain. `sitemap.xml` is generated at build (`vite.config.ts` plugin); canonical/OG/schema origin is `SITE_ORIGIN` in `components/ui/seoConfig.ts`. See `HANDOVER.md` for the full deploy guide and `DOCTOR_VERIFICATION.md` for pre-launch facts to confirm.
 
 ## Architecture
 
-A component-split SPA with React Router v6 on a `BrowserRouter`:
+A component-split, **prerendered** React Router v6 app (`vite-react-ssg`):
 
 ```
-index.html              — Tailwind CDN + inline config, JSON-LD, fonts, importmap
-index.css               — Paper texture, Atlas utilities (leader dots, figure captions, rule lines)
-index.tsx               — React root + SPA fallback recovery
-App.tsx                 — <BrowserRouter> with 7 routes under <Layout>
+index.html              — global head + site-wide JSON-LD @graph, fonts
+index.css               — @tailwind directives + Atlas utilities (figure captions, rule lines)
+index.tsx               — ViteReactSSG entry (prerender at build + hydrate on client)
+App.tsx                 — routes array (RouteRecord[]) under <Layout>; getStaticPaths for procedures
+components/ui/Seo.tsx   — per-route title/meta/canonical/OG (+ JSON-LD); seoConfig.ts, jsonld.ts
 types.ts                — Procedure, Condition, ProcessStep, etc.
 content/site.ts         — Single source of truth for all copy
 components/

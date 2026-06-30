@@ -3,6 +3,8 @@ import { FileText, MapPin, Car, MessageCircle, Phone, Mail, AlertCircle } from '
 import { ContactSection } from '../components/ContactSection';
 import { Reveal } from '../components/ui/Reveal';
 import { SectionHeading } from '../components/ui/SectionHeading';
+import { Seo } from '../components/ui/Seo';
+import { breadcrumbLd } from '../components/ui/jsonld';
 
 const BEFORE_YOU_ARRIVE = [
   {
@@ -68,6 +70,12 @@ const REPLY_CHANNELS = [
 export const ContactPage: React.FC = () => {
   return (
     <>
+      <Seo
+        title="Contact · Dr. Sameera K, Susheela Hospital Kothapet"
+        description="Susheela Hospital, SRK Puram, Kothapet, Hyderabad. Call, WhatsApp or email Dr. Sameera K's clinic — we reply within one working day. Map and directions inside."
+        path="/contact"
+        jsonLd={breadcrumbLd([{ label: 'Home', path: '/' }, { label: 'Contact' }])}
+      />
       <ContactSection />
 
       {/* ───────────────────── Before you arrive ───────────────────── */}

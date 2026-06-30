@@ -241,7 +241,7 @@ export const HeaderSticky: React.FC = () => {
           </a>
           <Link
             to="/contact"
-            className="inline-flex items-center h-10 px-5 bg-rose-400 text-paper-100 text-sm tracking-tight rounded-full shadow-[0_4px_12px_-6px_rgba(192,62,100,0.4)] hover:bg-rose-500 transition-colors"
+            className="inline-flex items-center h-10 px-5 bg-rose-500 text-paper-100 text-sm tracking-tight rounded-full shadow-[0_4px_12px_-6px_rgba(192,62,100,0.4)] hover:bg-rose-600 transition-colors"
           >
             Book consultation
           </Link>

@@ -46,7 +46,7 @@ export const CTABanner: React.FC<CTABannerProps> = ({
             <div className="lg:col-span-4 flex flex-col md:flex-row lg:flex-col gap-3">
               <Link
                 to={primaryHref}
-                className="inline-flex items-center justify-center gap-3 bg-rose-400 text-paper-100 h-14 px-7 rounded-full shadow-[0_8px_20px_-10px_rgba(192,62,100,0.55)] hover:bg-rose-500 transition-colors group"
+                className="inline-flex items-center justify-center gap-3 bg-rose-500 text-paper-100 h-14 px-7 rounded-full shadow-[0_8px_20px_-10px_rgba(192,62,100,0.55)] hover:bg-rose-600 transition-colors group"
               >
                 <span className="text-sm tracking-tight">{primaryLabel}</span>
                 <ArrowUpRight size={18} strokeWidth={1.5} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />

@@ -56,7 +56,7 @@ export const AboutDoctor: React.FC = () => {
               A surgeon who&rsquo;d rather <span className="text-rose-600">explain</span> than sell.
             </h2>
             <p className="mt-8 text-base md:text-lg text-ink-700 leading-relaxed max-w-prose">
-              {doctor.bio[0]}
+              {doctor.entityBio}
             </p>
             <div className="mt-10">
               <Link

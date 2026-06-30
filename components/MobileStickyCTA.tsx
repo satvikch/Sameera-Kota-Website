@@ -34,7 +34,7 @@ export const MobileStickyCTA: React.FC = () => {
         <Link
           to="/contact"
           aria-label="Request consultation"
-          className="flex flex-col items-center justify-center gap-1 py-3 text-[11px] font-mono tracking-[0.1em] uppercase bg-rose-400 text-paper-100"
+          className="flex flex-col items-center justify-center gap-1 py-3 text-[11px] font-mono tracking-[0.1em] uppercase bg-rose-500 text-paper-100"
         >
           <NotebookPen size={18} strokeWidth={1.5} aria-hidden="true" />
           Consult

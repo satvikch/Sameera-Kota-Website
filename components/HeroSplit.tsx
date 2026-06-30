@@ -40,7 +40,7 @@ export const Hero: React.FC = () => {
             <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:items-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-3 bg-rose-400 text-paper-100 h-14 px-7 rounded-full shadow-[0_8px_20px_-10px_rgba(192,62,100,0.4)] hover:bg-rose-500 hover:shadow-[0_12px_28px_-12px_rgba(192,62,100,0.5)] transition-all group"
+                className="inline-flex items-center justify-center gap-3 bg-rose-500 text-paper-100 h-14 px-7 rounded-full shadow-[0_8px_20px_-10px_rgba(192,62,100,0.4)] hover:bg-rose-600 hover:shadow-[0_12px_28px_-12px_rgba(192,62,100,0.5)] transition-all group"
               >
                 <span className="text-sm tracking-tight">Book a consultation</span>
                 <ArrowUpRight
