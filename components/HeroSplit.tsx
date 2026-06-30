@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import { site } from '../content/site';
+import { assetUrl } from './ui/asset';
 
 export const Hero: React.FC = () => {
   const { doctor } = site;
@@ -96,7 +97,7 @@ export const Hero: React.FC = () => {
               <div className="aspect-[4/5] bg-rose-50 relative overflow-hidden">
                 {hasRealPhoto ? (
                   <img
-                    src={doctor.photo}
+                    src={assetUrl(doctor.photo)}
                     alt={doctor.photoAlt}
                     className="w-full h-full object-cover"
                     loading="eager"

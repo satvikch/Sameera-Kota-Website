@@ -6,6 +6,7 @@ import { Reveal } from '../components/ui/Reveal';
 import { ClinicGallery } from '../components/ClinicGallery';
 import { CTABanner } from '../components/CTABanner';
 import { Seo } from '../components/ui/Seo';
+import { assetUrl } from '../components/ui/asset';
 import { breadcrumbLd } from '../components/ui/jsonld';
 
 // The four principles already exist in site.whyChooseUs — we re-use them
@@ -63,7 +64,7 @@ export const AboutPage: React.FC = () => {
                 <div className="aspect-[4/5] bg-rose-50 relative overflow-hidden">
                   {hasRealPhoto ? (
                     <img
-                      src={doctor.photo}
+                      src={assetUrl(doctor.photo)}
                       alt={doctor.photoAlt}
                       className="w-full h-full object-cover"
                       loading="lazy"

@@ -11,6 +11,7 @@ import {
   Zap,
 } from 'lucide-react';
 import { site } from '../content/site';
+import { assetUrl } from './ui/asset';
 import { SectionHeading } from './ui/SectionHeading';
 import { Reveal } from './ui/Reveal';
 
@@ -39,10 +40,7 @@ interface ProcedureCardProps {
 export const ProcedureCard: React.FC<ProcedureCardProps> = ({ procedure }) => {
   const Icon = PROCEDURE_ICONS[procedure.icon] ?? Activity;
   const hasImage = procedure.imageUrl && !procedure.imageUrl.startsWith('{{');
-  const imgSrc =
-    procedure.imageUrl && !/^https?:\/\//.test(procedure.imageUrl)
-      ? import.meta.env.BASE_URL + procedure.imageUrl.replace(/^\/+/, '')
-      : procedure.imageUrl;
+  const imgSrc = assetUrl(procedure.imageUrl);
 
   return (
     <Link

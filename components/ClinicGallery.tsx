@@ -1,5 +1,6 @@
 import React from 'react';
 import { site } from '../content/site';
+import { assetUrl } from './ui/asset';
 import { SectionHeading } from './ui/SectionHeading';
 import { Reveal } from './ui/Reveal';
 
@@ -19,7 +20,7 @@ export const ClinicGallery: React.FC = () => {
                 A look around <span className="text-rose-600">Susheela Hospital</span>.
               </>
             }
-            lede="Reception, consultation room, and the procedure room where most of the work happens."
+            lede="From the reception desk to the operating theatre, where most of the work happens."
           />
         </Reveal>
 
@@ -32,10 +33,10 @@ export const ClinicGallery: React.FC = () => {
                   <div className="aspect-[4/3] bg-rose-50 overflow-hidden">
                     {hasReal ? (
                       <img
-                        src={photo.src}
+                        src={assetUrl(photo.src)}
                         alt={photo.alt}
                         loading="lazy"
-                        className="w-full h-full object-cover grayscale-[0.3] contrast-105"
+                        className="w-full h-full object-cover object-top grayscale-[0.3] contrast-105"
                       />
                     ) : (
                       <div

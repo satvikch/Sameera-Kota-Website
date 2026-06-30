@@ -30,8 +30,8 @@ export const site = {
     // facts as `bio`, in one extractable block. Rendered high on the homepage.
     entityBio:
       'Dr. Sameera K is a consultant general, laparoscopic and laser surgeon at Susheela Hospital, SRK Puram, Kothapet, Hyderabad. She holds an MBBS, an MS in General Surgery, and fellowships in Minimal Access Surgery (FMAS) and the Indian Society for Colorectal Proctology (FISCP). She treats hernia, gallstones, appendicitis, piles, fissures and fistula, breast lumps, thyroid nodules, diabetic foot complications and soft-tissue abscesses, using minimally invasive laparoscopic and laser techniques wherever they speed recovery. Many patients consult her specifically because they prefer a woman surgeon for sensitive concerns; consultations are unhurried and private, and every patient leaves with a clear, written plan.',
-    // Not on the live site — commission a professional portrait before launch.
-    photo: '{{DOCTOR_PORTRAIT_URL}}',
+    // Real portrait supplied by the owner, self-hosted (path resolved via assetUrl).
+    photo: '/dr-sameera-portrait.jpg',
     photoAlt: 'Portrait of Dr. Sameera K, general and laparoscopic surgeon',
     education: [
       // Institution names and years not listed on live site — confirm with Dr. Kota.
@@ -51,8 +51,8 @@ export const site = {
       addressLine2: 'SRK Puram, Kothapet',
       city: 'Hyderabad',
       state: 'Telangana',
-      // Pincode not listed on live site — confirm with clinic.
-      pincode: '{{PINCODE}}',
+      // Confirmed by the practice owner, June 2026.
+      pincode: '500035',
       // Real numbers from the live site. Only one number is published; we re-use it for
       // WhatsApp and emergency until a separate line is confirmed.
       phone: '+918125205698',
@@ -869,13 +869,13 @@ export const site = {
   ],
 
   clinicGallery: [
-    // Replace these with real photographs of Susheela Hospital when they are available.
-    { src: '{{CLINIC_PHOTO_RECEPTION}}',   alt: 'Reception at Susheela Hospital', caption: 'Reception',         span: 'tall' },
-    { src: '{{CLINIC_PHOTO_CONSULTATION}}',alt: 'Consultation room',              caption: 'Consultation room', span: 'wide' },
-    { src: '{{CLINIC_PHOTO_WAITING}}',     alt: 'Waiting area',                   caption: 'Waiting area',      span: 'square' },
-    { src: '{{CLINIC_PHOTO_PROC_ROOM}}',   alt: 'Minor procedure room',           caption: 'Procedure room',    span: 'square' },
-    { src: '{{CLINIC_PHOTO_LASER}}',       alt: 'Diode laser console',            caption: 'Diode laser system',span: 'wide' },
-    { src: '{{CLINIC_PHOTO_TEAM}}',        alt: 'Dr. Sameera K with the clinic team', caption: 'Dr. Sameera K and team', span: 'tall' },
+    // Real photos, self-hosted in public/clinic/ (paths resolved via assetUrl).
+    // No identifiable patients (one supplied OT photo with a visible patient face
+    // was withheld pending written consent — see DOCTOR_VERIFICATION.md).
+    { src: '/clinic/clinic-reception.jpg',   alt: 'Reception at Susheela Hospital',                                caption: 'Reception',            span: 'wide' },
+    { src: '/clinic/clinic-surgery.jpg',     alt: 'Dr. Sameera K operating in the theatre at Susheela Hospital',   caption: 'In the theatre',       span: 'tall' },
+    { src: '/clinic/clinic-surgery-2.jpg',   alt: 'Dr. Sameera K during a surgical procedure',                     caption: 'During surgery',       span: 'tall' },
+    { src: '/clinic/clinic-laparoscopy.jpg', alt: 'Dr. Sameera K performing laparoscopic surgery at the monitor',  caption: 'Laparoscopic surgery', span: 'tall' },
   ],
 
   // Real reviews left by patients on Google (see practice.reviewsUrl).

@@ -9,6 +9,7 @@ import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { Byline } from '../components/Byline';
 import { VideoEmbed } from '../components/ui/VideoEmbed';
 import { Disclosure } from '../components/ui/Disclosure';
+import { assetUrl } from '../components/ui/asset';
 import type { Video, ProcedureDetailed, Procedure } from '../types';
 import { medicalProcedureLd, faqPageLd, breadcrumbLd } from '../components/ui/jsonld';
 
@@ -48,11 +49,7 @@ export const ProcedureDetailPage: React.FC = () => {
   const video = (site.videos as readonly Video[]).find((v) => v.procedureSlug === procedure.slug);
   const hasImage = procedure.imageUrl && !procedure.imageUrl.startsWith('{{');
   const credit = (procedure as Procedure).imageCredit;
-  // Local assets (e.g. /diabetic-foot.png) need the deploy base prefix; external URLs pass through.
-  const imgSrc =
-    procedure.imageUrl && !/^https?:\/\//.test(procedure.imageUrl)
-      ? import.meta.env.BASE_URL + procedure.imageUrl.replace(/^\/+/, '')
-      : procedure.imageUrl;
+  const imgSrc = assetUrl(procedure.imageUrl);
 
   return (
     <>

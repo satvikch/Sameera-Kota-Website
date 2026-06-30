@@ -48,9 +48,9 @@ Legend: 📍 = where it lives in the code.
     Physician JSON-LD (invisible entity signal, no visible promotion of other brands). Supply the
     confirmed current list of hospitals where she actively consults before this is added.
     📍 `index.html` Physician node; `content/site.ts` → `doctor.practice`
-- [ ] **Pincode.** Placeholder. The audit guessed “500035” — **not used; do not hardcode it.**
-  Confirm the real SRK Puram / Kothapet pincode. (The footer hides it until set; schema omits it.)
-  📍 `content/site.ts` → `doctor.practice.pincode` (`{{PINCODE}}`)
+- [x] **Pincode — confirmed 500035** (owner, June 2026). Now live in the footer, the contact-page
+  address, and the `PostalAddress` schema.
+  📍 `content/site.ts` → `doctor.practice.pincode`
 - [ ] **Consulting hours.** Placeholders. Until confirmed, the `OpeningHoursSpecification`
   schema is intentionally omitted.
   📍 `content/site.ts` → `doctor.practice.hoursGrouped` (`{{OPEN}} – {{CLOSE}}`)
@@ -75,9 +75,15 @@ Legend: 📍 = where it lives in the code.
   consistency: **Google Business Profile, Practo, Omni Hospitals listing, YouTube, LinkedIn.**
   Only Instagram + Facebook are wired today.
   📍 `index.html` JSON-LD `sameAs`; `content/site.ts` → `doctor.practice.socials`; `components/Footer.tsx`
-- [ ] **Real doctor portrait** (replaces the “SK” placeholder). Feeds About/Hero, `Physician.image`, OG.
-  📍 `content/site.ts` → `doctor.photo` (`{{DOCTOR_PORTRAIT_URL}}`)
-- [ ] **Real clinic photos** (replace the gallery placeholders).
+- [x] **Real doctor portrait — supplied & self-hosted** at `public/dr-sameera-portrait.jpg`
+  (optimised to 900×1200 JPEG). Live in the About and Hero portrait plates and `Physician.image`
+  schema. Confirm it's cleared for publication.
+  📍 `content/site.ts` → `doctor.photo`
+- [x] **Clinic photos — 3 real photos live** (reception + two operating-theatre photos of Dr.
+  Sameera), self-hosted in `public/clinic/`. A 4th OT photo (`operation 3.png`) can be added once
+  re-copied into `public/clinic/` (owner confirmed no identifiable patient face). **General good
+  practice / DPDP:** keep written patient consent on file for any clinical photo, and avoid
+  identifiable patient faces unless consent is documented.
   📍 `content/site.ts` → `clinicGallery`
 - [ ] **OG image (optional upgrade).** A branded 1200×630 card was generated at
   `public/og-image.jpg` (editable source: `public/og-image.svg`). Optionally re-export it with the
