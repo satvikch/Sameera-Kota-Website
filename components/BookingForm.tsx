@@ -52,7 +52,13 @@ export const BookingForm: React.FC = () => {
     e.preventDefault();
     const next = validate(fields);
     setErrors(next);
-    if (Object.keys(next).length > 0) return;
+    if (Object.keys(next).length > 0) {
+      // Move focus to the first invalid field so its error is announced.
+      const order: (keyof Fields)[] = ['name', 'phone', 'email', 'message'];
+      const firstInvalid = order.find((k) => next[k]);
+      if (firstInvalid) document.getElementById(`bf-${firstInvalid}`)?.focus();
+      return;
+    }
 
     const text = [
       `Hello Dr. Sameera K —`,
@@ -125,10 +131,15 @@ export const BookingForm: React.FC = () => {
               value={fields.name}
               onChange={update('name')}
               aria-invalid={!!errors.name}
+              aria-describedby={errors.name ? 'bf-name-error' : undefined}
               className={cn(fieldClass, errors.name && 'border-signal')}
               placeholder="Ramesh Kumar"
             />
-            {errors.name && <p className="text-xs text-signal mt-1 font-mono">{errors.name}</p>}
+            {errors.name && (
+              <p id="bf-name-error" className="text-xs text-signal mt-1 font-mono">
+                {errors.name}
+              </p>
+            )}
           </div>
           <div>
             <label htmlFor="bf-phone" className={labelClass}>
@@ -143,10 +154,15 @@ export const BookingForm: React.FC = () => {
               value={fields.phone}
               onChange={update('phone')}
               aria-invalid={!!errors.phone}
+              aria-describedby={errors.phone ? 'bf-phone-error' : undefined}
               className={cn(fieldClass, errors.phone && 'border-signal')}
               placeholder="+91 XXXXX XXXXX"
             />
-            {errors.phone && <p className="text-xs text-signal mt-1 font-mono">{errors.phone}</p>}
+            {errors.phone && (
+              <p id="bf-phone-error" className="text-xs text-signal mt-1 font-mono">
+                {errors.phone}
+              </p>
+            )}
           </div>
         </div>
 
@@ -162,10 +178,15 @@ export const BookingForm: React.FC = () => {
               value={fields.email}
               onChange={update('email')}
               aria-invalid={!!errors.email}
+              aria-describedby={errors.email ? 'bf-email-error' : undefined}
               className={cn(fieldClass, errors.email && 'border-signal')}
               placeholder="you@example.com"
             />
-            {errors.email && <p className="text-xs text-signal mt-1 font-mono">{errors.email}</p>}
+            {errors.email && (
+              <p id="bf-email-error" className="text-xs text-signal mt-1 font-mono">
+                {errors.email}
+              </p>
+            )}
           </div>
           <div>
             <label htmlFor="bf-procedure" className={labelClass}>
@@ -201,10 +222,15 @@ export const BookingForm: React.FC = () => {
             value={fields.message}
             onChange={update('message')}
             aria-invalid={!!errors.message}
+            aria-describedby={errors.message ? 'bf-message-error' : undefined}
             className={cn(fieldClass, 'h-auto py-3', errors.message && 'border-signal')}
             placeholder="What has brought you in, for how long, and anything you want us to know."
           />
-          {errors.message && <p className="text-xs text-signal mt-1 font-mono">{errors.message}</p>}
+          {errors.message && (
+            <p id="bf-message-error" className="text-xs text-signal mt-1 font-mono">
+              {errors.message}
+            </p>
+          )}
         </div>
       </fieldset>
 

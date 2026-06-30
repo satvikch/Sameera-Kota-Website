@@ -4,7 +4,6 @@ import { FeaturedProcedures } from '../components/ProceduresBentoGrid';
 import { AboutDoctor } from '../components/AboutDoctor';
 import { WhyChooseUs } from '../components/WhyChooseUs';
 import { Process } from '../components/Process';
-import { TechnologySection } from '../components/TechnologySection';
 import { TestimonialsCarousel } from '../components/TestimonialsCarousel';
 import { FAQAccordion } from '../components/FAQAccordion';
 import { CTABanner } from '../components/CTABanner';
@@ -26,7 +25,6 @@ export const HomePage: React.FC = () => {
       <FeaturedProcedures limit={5} />
       <WhyChooseUs />
       <Process />
-      <TechnologySection />
       <TestimonialsCarousel />
       <FAQAccordion />
       <CTABanner

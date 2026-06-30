@@ -110,28 +110,28 @@ export const site = {
       number: '01',
       title: 'A proper consultation first',
       description:
-        'Every decision starts with a full clinical examination and only the tests we actually need. If your problem can be handled without surgery, we say so clearly — and tell you what to do instead.',
+        'A full examination and only the tests you need. If surgery isn’t necessary, we say so — and tell you what to do instead.',
       variant: 'featured',
     },
     {
       number: '02',
       title: 'Minimally invasive when we can',
       description:
-        'Laparoscopic technique for abdominal problems, diode laser for proctology, tiny incisions where open surgery would once have meant a long scar. Shorter hospital stays, less pain, quicker return to normal life.',
+        'Laparoscopy for abdominal problems, diode laser for proctology, tiny incisions instead of long scars — shorter stays, less pain, quicker recovery.',
       variant: 'dark',
     },
     {
       number: '03',
       title: 'A calm, private setting for sensitive concerns',
       description:
-        'Piles, fissures, fistulas, breast lumps, thyroid nodules — these often get delayed out of embarrassment. A female surgeon is available for every stage of the examination and treatment.',
+        'Piles, breast lumps and similar concerns often get delayed out of embarrassment. A woman surgeon handles every stage of examination and treatment.',
       variant: 'light',
     },
     {
       number: '04',
       title: 'Honest answers about recovery',
       description:
-        'Before you consent, you will know exactly what to expect — how long you will be in hospital, how many days of rest at home, when you can return to work. No surprises after surgery.',
+        'Before you consent, you’ll know the hospital stay, the rest you’ll need, and when you can return to work. No surprises after surgery.',
       variant: 'accent',
     },
   ],

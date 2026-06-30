@@ -165,6 +165,8 @@ function ProceduresNavItem() {
 export const HeaderSticky: React.FC = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const drawerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -178,6 +180,45 @@ export const HeaderSticky: React.FC = () => {
     document.body.style.overflow = 'hidden';
     return () => {
       document.body.style.overflow = '';
+    };
+  }, [open]);
+
+  // Mobile drawer: focus in on open, trap Tab, Escape to close, restore on close.
+  useEffect(() => {
+    if (!open) return;
+    const getFocusable = (): HTMLElement[] => {
+      const root = drawerRef.current;
+      if (!root) return [];
+      return Array.from(
+        root.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
+      );
+    };
+    getFocusable()[0]?.focus();
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setOpen(false);
+        return;
+      }
+      if (e.key !== 'Tab') return;
+      const f = getFocusable();
+      if (f.length === 0) return;
+      const first = f[0];
+      const last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      toggleRef.current?.focus();
     };
   }, [open]);
 
@@ -248,10 +289,12 @@ export const HeaderSticky: React.FC = () => {
         </div>
 
         <button
+          ref={toggleRef}
           type="button"
           className="md:hidden p-2 text-ink-900"
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
+          aria-controls="mobile-drawer"
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
@@ -272,6 +315,8 @@ export const HeaderSticky: React.FC = () => {
             />
             <motion.nav
               key="drawer"
+              ref={drawerRef}
+              id="mobile-drawer"
               initial={{ y: -12, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -6, opacity: 0 }}

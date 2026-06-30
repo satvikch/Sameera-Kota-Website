@@ -8,6 +8,7 @@ import { Seo } from '../components/ui/Seo';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { Byline } from '../components/Byline';
 import { VideoEmbed } from '../components/ui/VideoEmbed';
+import { Disclosure } from '../components/ui/Disclosure';
 import type { Video } from '../types';
 import { medicalProcedureLd, faqPageLd, breadcrumbLd } from '../components/ui/jsonld';
 
@@ -211,34 +212,36 @@ export const ProcedureDetailPage: React.FC = () => {
 
               {d && (
                 <Reveal>
-                  <article className="grid md:grid-cols-2 gap-x-10 gap-y-8">
-                    <div>
-                      <p className="atlas-label mb-5">Before surgery</p>
-                      <ul className="space-y-3">
-                        {d.preCare.map((c, i) => (
-                          <li key={i} className="grid grid-cols-[2rem_1fr] gap-3 items-baseline text-sm text-ink-700 leading-snug">
-                            <span className="font-mono text-[10px] text-ink-300">
-                              pre.{String(i + 1).padStart(2, '0')}
-                            </span>
-                            <span>{c}</span>
-                          </li>
-                        ))}
-                      </ul>
+                  <Disclosure summary="Preparation &amp; recovery">
+                    <div className="grid md:grid-cols-2 gap-x-10 gap-y-8">
+                      <div>
+                        <p className="atlas-label mb-5">Before surgery</p>
+                        <ul className="space-y-3">
+                          {d.preCare.map((c, i) => (
+                            <li key={i} className="grid grid-cols-[2rem_1fr] gap-3 items-baseline text-sm text-ink-700 leading-snug">
+                              <span className="font-mono text-[10px] text-ink-300">
+                                pre.{String(i + 1).padStart(2, '0')}
+                              </span>
+                              <span>{c}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <p className="atlas-label mb-5">After surgery</p>
+                        <ul className="space-y-3">
+                          {d.postCare.map((c, i) => (
+                            <li key={i} className="grid grid-cols-[2rem_1fr] gap-3 items-baseline text-sm text-ink-700 leading-snug">
+                              <span className="font-mono text-[10px] text-ink-300">
+                                post.{String(i + 1).padStart(2, '0')}
+                              </span>
+                              <span>{c}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                    <div>
-                      <p className="atlas-label mb-5">After surgery</p>
-                      <ul className="space-y-3">
-                        {d.postCare.map((c, i) => (
-                          <li key={i} className="grid grid-cols-[2rem_1fr] gap-3 items-baseline text-sm text-ink-700 leading-snug">
-                            <span className="font-mono text-[10px] text-ink-300">
-                              post.{String(i + 1).padStart(2, '0')}
-                            </span>
-                            <span>{c}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </article>
+                  </Disclosure>
                 </Reveal>
               )}
 
@@ -246,16 +249,13 @@ export const ProcedureDetailPage: React.FC = () => {
                 <Reveal>
                   <article>
                     <p className="atlas-label mb-5">Patients often ask</p>
-                    <dl className="divide-y divide-paper-300 border-y border-paper-300">
+                    <div className="border-b border-paper-300">
                       {d.faqs.map((f, i) => (
-                        <div key={i} className="py-6">
-                          <dt className="atlas-display text-lg md:text-xl text-ink-900 leading-snug">
-                            {f.question}
-                          </dt>
-                          <dd className="mt-3 text-ink-700 leading-relaxed max-w-prose">{f.answer}</dd>
-                        </div>
+                        <Disclosure key={i} summary={f.question}>
+                          <p className="text-ink-700 leading-relaxed max-w-prose">{f.answer}</p>
+                        </Disclosure>
                       ))}
-                    </dl>
+                    </div>
                   </article>
                 </Reveal>
               )}

@@ -31,10 +31,9 @@ export const Hero: React.FC = () => {
               Surgery you&rsquo;ll understand before you say yes.
             </h1>
             <p className="mt-8 max-w-xl text-lg md:text-xl text-ink-700 leading-relaxed">
-              Dr. Sameera K treats hernia, gallstones, appendicitis, piles, thyroid
-              and breast lumps, diabetic foot and soft-tissue abscesses — using
-              laparoscopic and laser techniques wherever they make recovery
-              faster. At {doctor.practice.clinicName}, {doctor.practice.addressLine2}, Hyderabad.
+              Minimally invasive laparoscopic and laser surgery for hernia,
+              gallstones, piles, thyroid and breast lumps, and more — at{' '}
+              {doctor.practice.clinicName}, {doctor.practice.addressLine2}, Hyderabad.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:items-center">

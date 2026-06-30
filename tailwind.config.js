@@ -80,11 +80,17 @@ export default {
           '0%': { opacity: '0', transform: 'translateY(4px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
+        // Seamless loop: track holds two identical sets; -50% advances exactly one.
+        marquee: {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-50%)' },
+        },
       },
       animation: {
         'draw-h': 'drawHorizontal 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both',
         'draw-v': 'drawVertical 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both',
         'fade-label': 'fadeLabel 0.6s ease-out both',
+        marquee: 'marquee 48s linear infinite',
       },
     },
   },
