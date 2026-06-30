@@ -16,6 +16,10 @@ export interface ProcedureSessionInfo {
 export interface ProcedureDetailed {
   overview: readonly string[];
   howItWorks: string;
+  /** Optional: symptoms / when to see a surgeon — rendered as a list. */
+  symptoms?: readonly string[];
+  /** Optional: how the condition is diagnosed — rendered as a paragraph. */
+  diagnosis?: string;
   benefits: readonly string[];
   honestRisks: string;
   sessionInfo: ProcedureSessionInfo;
@@ -37,6 +41,8 @@ export interface Procedure {
   downtime: string;
   imageUrl?: string;
   imageAlt?: string;
+  /** Attribution shown under the image (required for CC BY-SA diagrams). */
+  imageCredit?: string;
   detailed?: ProcedureDetailed;
 }
 

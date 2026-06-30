@@ -9,7 +9,7 @@ import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { Byline } from '../components/Byline';
 import { VideoEmbed } from '../components/ui/VideoEmbed';
 import { Disclosure } from '../components/ui/Disclosure';
-import type { Video } from '../types';
+import type { Video, ProcedureDetailed, Procedure } from '../types';
 import { medicalProcedureLd, faqPageLd, breadcrumbLd } from '../components/ui/jsonld';
 
 export const ProcedureDetailPage: React.FC = () => {
@@ -44,8 +44,15 @@ export const ProcedureDetailPage: React.FC = () => {
     );
   }
 
-  const d = procedure.detailed;
+  const d: ProcedureDetailed | undefined = procedure.detailed;
   const video = (site.videos as readonly Video[]).find((v) => v.procedureSlug === procedure.slug);
+  const hasImage = procedure.imageUrl && !procedure.imageUrl.startsWith('{{');
+  const credit = (procedure as Procedure).imageCredit;
+  // Local assets (e.g. /diabetic-foot.png) need the deploy base prefix; external URLs pass through.
+  const imgSrc =
+    procedure.imageUrl && !/^https?:\/\//.test(procedure.imageUrl)
+      ? import.meta.env.BASE_URL + procedure.imageUrl.replace(/^\/+/, '')
+      : procedure.imageUrl;
 
   return (
     <>
@@ -64,7 +71,7 @@ export const ProcedureDetailPage: React.FC = () => {
           ]),
         ]}
       />
-      <section className="atlas-section">
+      <section className="atlas-section !pb-10 md:!pb-14">
         <div className="atlas-container">
           <Reveal>
             <Breadcrumbs
@@ -115,10 +122,33 @@ export const ProcedureDetailPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="atlas-section bg-paper-100">
+      <section className="atlas-section bg-paper-100 !pt-10 md:!pt-14">
         <div className="atlas-container">
-          <div className="grid gap-14 lg:grid-cols-12">
-            <div className="lg:col-span-7 space-y-14">
+          <div className="grid gap-10 lg:grid-cols-12">
+            <div className="lg:col-span-7 space-y-10">
+              {hasImage && (
+                <Reveal>
+                  <figure className="atlas-plate bg-paper-50 overflow-hidden">
+                    <div className="flex aspect-[16/10] items-center justify-center bg-white p-6">
+                      <img
+                        src={imgSrc}
+                        alt={procedure.imageAlt}
+                        className="max-h-full max-w-full object-contain"
+                        loading="eager"
+                      />
+                    </div>
+                    <figcaption className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-t border-paper-300 px-5 py-3">
+                      <span className="atlas-figcap">{procedure.imageAlt}</span>
+                      {credit && (
+                        <span className="font-mono text-[9px] uppercase tracking-[0.1em] text-ink-300">
+                          {credit}
+                        </span>
+                      )}
+                    </figcaption>
+                  </figure>
+                </Reveal>
+              )}
+
               {d && (
                 <Reveal>
                   <article>
@@ -159,6 +189,33 @@ export const ProcedureDetailPage: React.FC = () => {
                         </p>
                       </figcaption>
                     </figure>
+                  </article>
+                </Reveal>
+              )}
+
+              {d?.symptoms && d.symptoms.length > 0 && (
+                <Reveal>
+                  <article>
+                    <p className="atlas-label mb-5">Symptoms — when to see a surgeon</p>
+                    <ul className="grid md:grid-cols-2 gap-x-8 gap-y-3">
+                      {d.symptoms.map((s, i) => (
+                        <li key={i} className="grid grid-cols-[2rem_1fr] gap-3 items-baseline">
+                          <span className="font-mono text-[10px] tracking-[0.12em] text-rose-600">
+                            {String(i + 1).padStart(2, '0')} ·
+                          </span>
+                          <span className="text-sm text-ink-900 leading-snug">{s}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                </Reveal>
+              )}
+
+              {d?.diagnosis && (
+                <Reveal>
+                  <article>
+                    <p className="atlas-label mb-5">How it&rsquo;s diagnosed</p>
+                    <p className="text-ink-700 leading-relaxed max-w-prose">{d.diagnosis}</p>
                   </article>
                 </Reveal>
               )}

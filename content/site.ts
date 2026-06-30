@@ -23,7 +23,7 @@ export const site = {
       'My work begins with listening. Before any surgical plan is offered, we take the time to understand what you are actually facing, explain it without jargon, and walk through the least invasive option that gives a durable result.',
     bio: [
       'Dr. Sameera K is a consultant general, laparoscopic and laser surgeon practising at Susheela Hospital, Kothapet, Hyderabad. She holds an MBBS, an MS in General Surgery, and fellowships in Minimal Access Surgery (FMAS) and the Indian Society for Colorectal Proctology (FISCP).',
-      'Her practice is organised around minimally invasive care for the everyday surgical problems adults in Hyderabad are most likely to face — hernia, gallstones, appendicitis, piles, fissures and fistula, breast lumps, thyroid nodules, diabetic foot complications, and soft-tissue abscesses.',
+      'Her practice centres on minimally invasive care for the surgical problems adults most commonly face — hernia, gallstones, appendicitis, piles, thyroid and breast lumps, diabetic foot, and abscesses.',
       'Many patients come specifically because they prefer a female surgeon for sensitive or intimate concerns; she treats that as a privilege, not a selling point. Consultations are unhurried and private. You leave with a clear, written plan.',
     ],
     // Self-contained factual paragraph for AI/GEO entity extraction — the same
@@ -200,8 +200,9 @@ export const site = {
       title: 'Laser treatment for piles, fissures & fistula',
       category: 'Proctology',
       icon: 'Zap',
-      imageUrl: 'https://images.pexels.com/photos/7108110/pexels-photo-7108110.jpeg?auto=compress&cs=srgb&w=1200',
-      imageAlt: 'Diode-laser proctology — an illustrative reference image',
+      imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Internal_and_external_hemorrhoids.png?width=1200',
+      imageAlt: 'Diagram of internal and external haemorrhoids in the anal canal',
+      imageCredit: 'Diagram via Wikimedia Commons',
       summary:
         'Diode-laser treatment for haemorrhoids, anal fissures and fistula — designed around the two things patients ask for most: less pain, and getting back to normal life quickly.',
       bullets: [
@@ -276,8 +277,9 @@ export const site = {
       title: 'Laparoscopic hernia repair',
       category: 'Laparoscopy',
       icon: 'Shield',
-      imageUrl: 'https://images.pexels.com/photos/34415377/pexels-photo-34415377.jpeg?auto=compress&cs=srgb&w=1200',
-      imageAlt: 'Laparoscopic hernia repair — an illustrative reference image',
+      imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Blausen_0560_InguinalHernia.png?width=1200',
+      imageAlt: 'Diagram of an inguinal hernia',
+      imageCredit: 'Diagram: Blausen Medical (CC BY-SA 3.0), via Wikimedia Commons',
       summary:
         'Keyhole repair of inguinal, umbilical, incisional and ventral hernias, reinforced with a mesh placed through small incisions — designed for structural strength and a quick return to activity.',
       bullets: [
@@ -353,8 +355,9 @@ export const site = {
       title: 'Gallbladder surgery for gallstones',
       category: 'Laparoscopy',
       icon: 'Activity',
-      imageUrl: 'https://images.pexels.com/photos/11674613/pexels-photo-11674613.jpeg?auto=compress&cs=srgb&w=1200',
-      imageAlt: 'Laparoscopic gallbladder surgery — an illustrative reference image',
+      imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Biliary_system_multilingual.svg?width=1200',
+      imageAlt: 'Diagram of the gallbladder and biliary system',
+      imageCredit: 'Diagram via Wikimedia Commons',
       summary:
         'Removal of a diseased gallbladder through four keyhole incisions — the standard treatment for symptomatic gallstones and gallbladder inflammation.',
       bullets: [
@@ -429,8 +432,9 @@ export const site = {
       title: 'Appendix removal',
       category: 'Emergency',
       icon: 'Stethoscope',
-      imageUrl: 'https://images.pexels.com/photos/26212702/pexels-photo-26212702.jpeg?auto=compress&cs=srgb&w=1200',
-      imageAlt: 'Laparoscopic appendix removal — an illustrative reference image',
+      imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Stomach_colon_rectum_diagram-en.svg?width=1200',
+      imageAlt: 'Diagram showing the appendix within the digestive tract',
+      imageCredit: 'Diagram via Wikimedia Commons',
       summary:
         'Rapid, minimally invasive removal of an inflamed appendix — an emergency procedure where early treatment makes a big difference to the recovery.',
       bullets: [
@@ -503,8 +507,9 @@ export const site = {
       title: 'Thyroid & breast surgery',
       category: "Women's Surgery",
       icon: 'HeartHandshake',
-      imageUrl: 'https://images.pexels.com/photos/7659876/pexels-photo-7659876.jpeg?auto=compress&cs=srgb&w=1200',
-      imageAlt: 'Thyroid and breast surgery — an illustrative reference image',
+      imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Illu08_thyroid.jpg?width=1200',
+      imageAlt: 'Diagram of the thyroid gland',
+      imageCredit: 'Diagram: public domain, via Wikimedia Commons',
       summary:
         'Careful, cosmetically-considerate surgery for thyroid nodules, goitres, breast lumps and suspicious breast lesions — with female-led consultation through every stage.',
       bullets: [
@@ -579,8 +584,9 @@ export const site = {
       title: 'Diabetic foot surgery',
       category: 'Emergency',
       icon: 'Footprints',
-      imageUrl: 'https://images.pexels.com/photos/33934620/pexels-photo-33934620.jpeg?auto=compress&cs=srgb&w=1200',
-      imageAlt: 'Diabetic foot surgery — an illustrative reference image',
+      imageUrl: '/diabetic-foot.png',
+      imageAlt: 'Diabetic foot — diagram of reduced blood flow, nerve damage, ulcers, callus and skin changes',
+      imageCredit: 'Supplied illustration',
       summary:
         'Prompt, conservative surgical care for diabetic foot ulcers, infections and gangrene — preserving as much of the foot as possible, and teaching you how to prevent it from recurring.',
       bullets: [
@@ -599,10 +605,21 @@ export const site = {
       detailed: {
         overview: [
           'Diabetes raises the risk of foot ulcers, infections, and — in the worst cases — gangrene. The right surgical approach is almost always the smallest possible: remove what is dead or infected, protect what is still alive, and use careful wound care to heal the rest.',
+          'Three things drive a diabetic foot wound: reduced sensation, so small injuries go unnoticed; reduced blood supply, so they heal slowly; and a higher risk of infection. Good treatment addresses all three — not just the wound on the surface — which is why footwear and blood-sugar control matter as much as the surgery itself.',
           'Early intervention saves tissue. Waiting for the problem to "declare itself" usually means more extensive surgery than would have been needed a week earlier.',
         ],
         howItWorks:
           'A careful examination assesses the pulse, depth of the wound, and any signs of infection. Targeted investigations (blood sugar, infection markers, imaging) inform the plan. Debridement removes only the tissue that cannot be saved. A dressing plan and off-loading (special footwear or a short period of non-weight-bearing) keeps the wound protected while it heals.',
+        symptoms: [
+          'A foot ulcer or sore that has not healed within two weeks',
+          'Redness, warmth, swelling, or an unusual smell from a foot wound',
+          'Darkening or black skin on a toe, the heel, or the foot',
+          'New numbness, tingling, or loss of sensation in the foot',
+          'A wound that suddenly stops hurting — loss of pain can be a warning sign, not a good one',
+          'Any cut, blister, or callus on a diabetic foot that looks infected',
+        ],
+        diagnosis:
+          'We assess three things: the foot’s blood supply (pulses, and an arterial Doppler scan if needed), the depth and extent of the wound, and whether infection has reached deeper tissue or bone. Blood tests gauge infection and sugar control, an X-ray or scan looks for deeper spread, and a wound swab guides the right antibiotic. That combined picture — circulation, infection, and depth — decides how much surgery, if any, is required.',
         benefits: [
           'Tissue-sparing — the smallest intervention that works',
           'Co-managed with your diabetologist for sugar control',
@@ -631,6 +648,11 @@ export const site = {
         ],
         faqs: [
           {
+            question: 'Do all diabetic foot ulcers need surgery?',
+            answer:
+              'No. Many shallow ulcers heal with off-loading, regular dressings, good blood-sugar control, and the right footwear — no surgery at all. Surgery is reserved for tissue that is dead or infected and will not heal on its own, or to drain a deep infection. The aim is always the smallest intervention that lets the foot heal.',
+          },
+          {
             question: 'Will I lose my foot?',
             answer:
               'Most diabetic foot problems do not end in amputation, particularly when they are treated early. The goal is always to save as much of the foot as possible.',
@@ -648,8 +670,9 @@ export const site = {
       title: 'Skin & soft-tissue abscess',
       category: 'Emergency',
       icon: 'Droplets',
-      imageUrl: 'https://images.pexels.com/photos/7108119/pexels-photo-7108119.jpeg?auto=compress&cs=srgb&w=1200',
-      imageAlt: 'Soft-tissue abscess drainage — an illustrative reference image',
+      imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Blausen_0007_Abscess.png?width=1200',
+      imageAlt: 'Cross-section diagram of a skin abscess',
+      imageCredit: 'Diagram: Blausen Medical (CC BY-SA 3.0), via Wikimedia Commons',
       summary:
         'Prompt drainage of skin and soft-tissue abscesses under local or short general anaesthesia — with a clear plan for preventing them from coming back.',
       bullets: [
@@ -668,10 +691,20 @@ export const site = {
       detailed: {
         overview: [
           'A soft-tissue abscess is a walled-off collection of pus. Once formed, it rarely responds to antibiotics alone — the pressure inside the cavity prevents the drugs from reaching the bacteria. Surgical drainage is the definitive treatment.',
+          'Not every red, painful lump is an abscess. Early infection without a formed collection (cellulitis) is treated with antibiotics, while a true abscess needs draining — telling the two apart, and finding any underlying cause, is the point of the first visit.',
           'Early drainage means a smaller wound, a faster recovery, and a lower chance of the problem spreading into surrounding tissue.',
         ],
         howItWorks:
           'After local or short general anaesthesia, a precise incision opens the abscess, the pus is drained and sent for culture if indicated, and the cavity is washed out. A simple dressing or small pack keeps the wound open so it can heal from the base upwards.',
+        symptoms: [
+          'A painful, red, warm lump under the skin that keeps growing',
+          'A soft, "pointing" swelling that feels as if it holds fluid',
+          'Fever, chills, or a spreading area of redness around the lump',
+          'A previously drained spot that has filled up and turned painful again',
+          'Any rapidly enlarging or very painful swelling — especially with diabetes or low immunity',
+        ],
+        diagnosis:
+          'Most abscesses are diagnosed on examination — a tender, fluctuant swelling with surrounding redness. When the collection is deep or the diagnosis is unclear, an ultrasound confirms the pocket of pus and how deep it sits before any drainage. Pus is sent for culture when the infection is recurrent, severe, or slow to settle, so the right antibiotic can be added, and blood tests are checked if infection appears to be spreading.',
         benefits: [
           'Immediate relief of pain and pressure',
           'Low risk of spreading infection when done early',
@@ -704,6 +737,11 @@ export const site = {
               'For a very early, cellulitic stage without a formed collection — sometimes, yes. For a true abscess with pus inside, drainage is the definitive treatment. Antibiotics alone usually delay resolution rather than cure it.',
           },
           {
+            question: 'Why does my abscess keep coming back?',
+            answer:
+              'A recurring abscess usually has an underlying cause — a blocked hair follicle or sweat gland (hidradenitis), a pilonidal sinus, a retained foreign body, or poorly controlled diabetes. Draining the pus settles the episode; preventing the next one means finding and treating that cause, which we go through at follow-up and arrange any further treatment for.',
+          },
+          {
             question: 'Will it leave a big scar?',
             answer:
               'Most drainage scars are small and fade over 6–12 months. Location and skin type influence how visible the scar is in the long term.',
@@ -716,8 +754,9 @@ export const site = {
       title: 'Laser treatment for varicose veins (EVLA)',
       category: 'Vascular',
       icon: 'Zap',
-      imageUrl: '{{PROCEDURE_IMAGE_VARICOSE}}',
-      imageAlt: 'Endovenous laser ablation for varicose veins — an illustrative reference image',
+      imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Blausen_0891_VaricoseVein.png?width=1200',
+      imageAlt: 'Diagram comparing a healthy vein and a varicose vein',
+      imageCredit: 'Diagram: Blausen Medical (CC BY-SA 3.0), via Wikimedia Commons',
       summary:
         'Endovenous laser ablation (EVLA) for varicose veins — a day-care, needle-puncture alternative to open vein stripping that seals the faulty vein from the inside, so you walk the same day and return to work within a few days.',
       bullets: [

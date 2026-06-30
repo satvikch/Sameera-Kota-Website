@@ -82,6 +82,13 @@ Legend: 📍 = where it lives in the code.
 - [ ] **OG image (optional upgrade).** A branded 1200×630 card was generated at
   `public/og-image.jpg` (editable source: `public/og-image.svg`). Optionally re-export it with the
   real logo/portrait and brand fonts.
+- [ ] **Procedure diagrams — confirm licences + attribution before launch.** Each procedure now uses
+  an anatomical diagram **hotlinked from Wikimedia Commons** (`Special:FilePath/...`), with a credit
+  in the figure caption. Several are **CC BY-SA 3.0** (Blausen Medical) and *require* attribution —
+  confirm each file’s exact licence/author and that the credit is correct, and ideally **self-host**
+  the images (download + serve locally) rather than hotlinking Commons. **Diabetic foot** uses a
+  supplied illustration **self-hosted** at `public/diabetic-foot.png` — confirm its licence/source.
+  📍 `content/site.ts` → `procedures[*].imageUrl` / `imageCredit`
 
 ## 4 · Clinical content sign-off (the byline depends on it)
 

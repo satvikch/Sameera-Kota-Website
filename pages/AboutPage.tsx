@@ -5,11 +5,8 @@ import { site } from '../content/site';
 import { Reveal } from '../components/ui/Reveal';
 import { ClinicGallery } from '../components/ClinicGallery';
 import { CTABanner } from '../components/CTABanner';
-import { VideoSection } from '../components/VideoSection';
 import { Seo } from '../components/ui/Seo';
 import { breadcrumbLd } from '../components/ui/jsonld';
-
-const INTERVIEW_VIDEOS = site.videos.filter((v) => v.category === 'interview');
 
 // The four principles already exist in site.whyChooseUs — we re-use them
 // here as "approach to care" rather than re-writing new copy.
@@ -254,18 +251,6 @@ export const AboutPage: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* ───────────────────── 4b · In the media ───────────────────── */}
-      <VideoSection
-        videos={INTERVIEW_VIDEOS}
-        chapter="In the media"
-        title={
-          <>
-            On television, <span className="text-rose-600">explaining the work</span>.
-          </>
-        }
-        lede="Dr. Sameera is regularly invited onto regional health programmes to explain common surgical problems in plain language. A few of those conversations are below."
-      />
 
       {/* ───────────────────── 5 · What a first consultation looks like ───────────────────── */}
       <section className="atlas-section bg-paper-200">
