@@ -38,13 +38,18 @@ export const FAQAccordion: React.FC = () => {
         </Reveal>
 
         <Reveal delay={0.04}>
-          <div className="mt-10 flex flex-wrap items-baseline gap-x-6 gap-y-2 pb-4 border-b border-paper-300">
+          <div
+            role="group"
+            aria-label="Filter questions by section"
+            className="mt-10 flex flex-wrap items-baseline gap-x-6 gap-y-2 pb-4 border-b border-paper-300"
+          >
             <span className="atlas-label">Filter by section</span>
             {(['All', ...CATEGORIES] as const).map((c) => (
               <button
                 key={c}
                 type="button"
                 onClick={() => setFilter(c)}
+                aria-pressed={filter === c}
                 className={cn(
                   'font-mono text-[11px] tracking-[0.12em] uppercase pb-1 border-b transition-colors',
                   filter === c
@@ -66,6 +71,7 @@ export const FAQAccordion: React.FC = () => {
               <li key={id}>
                 <button
                   type="button"
+                  id={`${id}-button`}
                   onClick={() => setActive(isOpen ? null : id)}
                   aria-expanded={isOpen}
                   aria-controls={`${id}-panel`}
@@ -90,6 +96,8 @@ export const FAQAccordion: React.FC = () => {
                     <motion.div
                       key="panel"
                       id={`${id}-panel`}
+                      role="region"
+                      aria-labelledby={`${id}-button`}
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}

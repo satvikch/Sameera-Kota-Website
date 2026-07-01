@@ -1,15 +1,84 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
+import { useReducedMotion } from 'framer-motion';
+import Lenis from 'lenis';
 import { HeaderSticky } from './HeaderSticky';
 import { EmergencyBanner } from './EmergencyBannerSticky';
 import { MobileStickyCTA } from './MobileStickyCTA';
 import { Footer } from './Footer';
 import { PetalWash } from './PetalWash';
+import { site } from '../content/site';
+
+// Human-readable name for the current route — used to announce SPA navigations
+// to screen-reader users (who otherwise get no signal that the page changed).
+function routeLabel(pathname: string): string {
+  const clean = pathname.replace(/\/+$/, '') || '/';
+  if (clean === '/') return 'Home';
+  const map: Record<string, string> = {
+    '/about': 'About Dr. Sameera K',
+    '/procedures': 'Procedures',
+    '/results': 'Results',
+    '/contact': 'Contact',
+    '/privacy-policy': 'Privacy policy',
+    '/medical-disclaimer': 'Medical disclaimer',
+    '/editorial-policy': 'Editorial policy',
+  };
+  if (map[clean]) return map[clean];
+  const proc = clean.match(/^\/procedures\/(.+)$/);
+  if (proc) {
+    const p = site.procedures.find((x) => x.slug === proc[1]);
+    return p ? p.title : 'Procedure';
+  }
+  return 'Page';
+}
 
 export const Layout: React.FC = () => {
   const { pathname } = useLocation();
+  const mainRef = useRef<HTMLElement>(null);
+  const hasMounted = useRef(false);
+  const [announcement, setAnnouncement] = useState('');
+  const reduced = useReducedMotion();
+  const lenisRef = useRef<Lenis | null>(null);
+
+  // Smooth scroll — desktop wheel only (Lenis leaves touch scrolling native, so
+  // mobile is unaffected). Disabled entirely for prefers-reduced-motion, and
+  // torn down on unmount so it never leaks a RAF loop.
   useEffect(() => {
-    window.scrollTo({ top: 0 });
+    if (reduced) return;
+    const lenis = new Lenis({
+      duration: 1.1,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
+    lenisRef.current = lenis;
+    let raf = 0;
+    const loop = (time: number) => {
+      lenis.raf(time);
+      raf = requestAnimationFrame(loop);
+    };
+    raf = requestAnimationFrame(loop);
+    return () => {
+      cancelAnimationFrame(raf);
+      lenis.destroy();
+      lenisRef.current = null;
+    };
+  }, [reduced]);
+
+  useEffect(() => {
+    // Jump to top instantly on navigation — via Lenis when active so it doesn't
+    // animate the jump or fight the focus move below.
+    if (lenisRef.current) lenisRef.current.scrollTo(0, { immediate: true });
+    else window.scrollTo({ top: 0 });
+    // Skip the very first render: on initial load the natural tab order from the
+    // top of the document is correct, and we must not steal focus during hydration.
+    if (!hasMounted.current) {
+      hasMounted.current = true;
+      return;
+    }
+    // On client-side navigation, move focus to the top of the new page's content
+    // (so keyboard users are not stranded on the just-clicked link) and announce
+    // the change politely. preventScroll keeps the scroll-to-top above intact.
+    mainRef.current?.focus({ preventScroll: true });
+    setAnnouncement(`${routeLabel(pathname)} — page loaded`);
   }, [pathname]);
 
   return (
@@ -23,11 +92,20 @@ export const Layout: React.FC = () => {
       </a>
       <EmergencyBanner />
       <HeaderSticky />
-      <main id="main" className="flex-1 pb-20 md:pb-0">
+      <main
+        id="main"
+        ref={mainRef}
+        tabIndex={-1}
+        className="flex-1 pb-20 md:pb-0 focus:outline-none"
+      >
         <Outlet />
       </main>
       <Footer />
       <MobileStickyCTA />
+      {/* Polite route-change announcer for screen readers. */}
+      <p className="sr-only" aria-live="polite" aria-atomic="true">
+        {announcement}
+      </p>
     </div>
   );
 };

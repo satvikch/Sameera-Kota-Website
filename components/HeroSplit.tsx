@@ -1,11 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
+import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import { site } from '../content/site';
+import { assetUrl } from './ui/asset';
 
 export const Hero: React.FC = () => {
   const { doctor } = site;
   const hasRealPhoto = doctor.photo && !doctor.photo.startsWith('{{');
+
+  // Subtle parallax: the portrait drifts up as the hero scrolls. The slight
+  // scale gives the drift headroom so it never reveals an edge. Off for
+  // reduced-motion.
+  const reduced = useReducedMotion();
+  const { scrollY } = useScroll();
+  const portraitY = useTransform(scrollY, [0, 1000], ['0%', '-6%']);
 
   return (
     <section className="relative">
@@ -31,16 +40,15 @@ export const Hero: React.FC = () => {
               Surgery you&rsquo;ll understand before you say yes.
             </h1>
             <p className="mt-8 max-w-xl text-lg md:text-xl text-ink-700 leading-relaxed">
-              Dr. Sameera K treats hernia, gallstones, appendicitis, piles, thyroid
-              and breast lumps, diabetic foot and soft-tissue abscesses — using
-              laparoscopic and laser techniques wherever they make recovery
-              faster. At {doctor.practice.clinicName}, {doctor.practice.addressLine2}, Hyderabad.
+              Minimally invasive laparoscopic and laser surgery for hernia,
+              gallstones, piles, thyroid and breast lumps, and more — at{' '}
+              {doctor.practice.clinicName}, {doctor.practice.addressLine2}, Hyderabad.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:items-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-3 bg-rose-400 text-paper-100 h-14 px-7 rounded-full shadow-[0_8px_20px_-10px_rgba(192,62,100,0.4)] hover:bg-rose-500 hover:shadow-[0_12px_28px_-12px_rgba(192,62,100,0.5)] transition-all group"
+                className="inline-flex items-center justify-center gap-3 bg-rose-500 text-paper-100 h-14 px-7 rounded-full shadow-[0_8px_20px_-10px_rgba(192,62,100,0.4)] hover:bg-rose-600 hover:shadow-[0_12px_28px_-12px_rgba(192,62,100,0.5)] transition-all group"
               >
                 <span className="text-sm tracking-tight">Book a consultation</span>
                 <ArrowUpRight
@@ -96,10 +104,11 @@ export const Hero: React.FC = () => {
               <span className="atlas-corner atlas-corner-br" aria-hidden="true" />
               <div className="aspect-[4/5] bg-rose-50 relative overflow-hidden">
                 {hasRealPhoto ? (
-                  <img
-                    src={doctor.photo}
+                  <motion.img
+                    src={assetUrl(doctor.photo)}
                     alt={doctor.photoAlt}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover will-change-transform"
+                    style={{ y: reduced ? 0 : portraitY, scale: reduced ? 1 : 1.12 }}
                     loading="eager"
                     width={640}
                     height={800}

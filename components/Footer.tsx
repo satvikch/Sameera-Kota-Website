@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Facebook } from 'lucide-react';
+import { Instagram, Facebook, MapPin } from 'lucide-react';
 import { site } from '../content/site';
 
 export const Footer: React.FC = () => {
@@ -23,8 +23,19 @@ export const Footer: React.FC = () => {
             <p className="mt-4 text-sm text-ink-700 leading-relaxed max-w-xs">
               General, laparoscopic &amp; laser surgeon at {p.clinicName}, {p.addressLine2}, Hyderabad.
             </p>
-            {socials && (socials.instagram || socials.facebook) && (
+            {socials && (socials.instagram || socials.facebook || socials.googleMaps) && (
               <div className="mt-6 flex items-center gap-3">
+                {socials.googleMaps && (
+                  <a
+                    href={socials.googleMaps}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Dr. Sameera K on Google Maps"
+                    className="flex h-9 w-9 items-center justify-center border border-ink-900 text-ink-900 hover:bg-ink-900 hover:text-paper-100 transition-colors"
+                  >
+                    <MapPin size={16} strokeWidth={1.5} aria-hidden="true" />
+                  </a>
+                )}
                 {socials.instagram && (
                   <a
                     href={socials.instagram}
@@ -61,7 +72,8 @@ export const Footer: React.FC = () => {
               <br />
               {p.addressLine2}
               <br />
-              {p.city}, {p.state} {p.pincode}
+              {p.city}, {p.state}
+              {p.pincode.startsWith('{{') ? '' : ` ${p.pincode}`}
             </address>
           </div>
 
@@ -136,6 +148,18 @@ export const Footer: React.FC = () => {
         </div>
 
         <hr className="atlas-rule-soft mt-12 mb-6" />
+
+        <nav aria-label="Legal" className="flex flex-wrap gap-x-5 gap-y-2 mb-5 text-xs">
+          <Link to="/privacy-policy" className="text-ink-700 hover:text-rose-600">
+            Privacy Policy
+          </Link>
+          <Link to="/medical-disclaimer" className="text-ink-700 hover:text-rose-600">
+            Medical Disclaimer
+          </Link>
+          <Link to="/editorial-policy" className="text-ink-700 hover:text-rose-600">
+            Editorial Policy
+          </Link>
+        </nav>
 
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-ink-500">
           <p>

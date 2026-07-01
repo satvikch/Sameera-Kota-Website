@@ -7,8 +7,10 @@ import { SectionHeading } from '../components/ui/SectionHeading';
 import { Reveal } from '../components/ui/Reveal';
 import { CTABanner } from '../components/CTABanner';
 import { cn } from '../components/ui/cn';
+import { Seo } from '../components/ui/Seo';
+import { procedureListLd, breadcrumbLd } from '../components/ui/jsonld';
 
-const CATEGORIES = ['All', 'Proctology', 'Laparoscopy', 'Emergency', "Women's Surgery"] as const;
+const CATEGORIES = ['All', 'Proctology', 'Laparoscopy', 'Emergency', "Women's Surgery", 'Vascular'] as const;
 type Category = (typeof CATEGORIES)[number];
 
 const MINIMALLY_INVASIVE_POINTS = [
@@ -43,6 +45,15 @@ export const ProceduresPage: React.FC = () => {
 
   return (
     <>
+      <Seo
+        title="Surgical Procedures · Dr. Sameera K, Kothapet Hyderabad"
+        description="Laparoscopic and laser surgery for hernia, gallstones, appendicitis, piles, thyroid, breast, diabetic foot and abscess in Kothapet, Hyderabad — each procedure explained in plain language."
+        path="/procedures"
+        jsonLd={[
+          procedureListLd(site.procedures),
+          breadcrumbLd([{ label: 'Home', path: '/' }, { label: 'Procedures' }]),
+        ]}
+      />
       {/* ───────────────────── 1 · Page heading ───────────────────── */}
       <section className="atlas-section">
         <div className="atlas-container">

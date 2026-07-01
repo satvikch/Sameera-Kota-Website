@@ -1,10 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
+import { Seo } from '../components/ui/Seo';
 
 export const NotFoundPage: React.FC = () => {
   return (
-    <section className="atlas-section bg-paper-100">
+    <>
+      <Seo
+        title="Page not found · Dr. Sameera K"
+        description="The page could not be found. Return to the homepage to find procedures, the clinic address in Kothapet, and how to book a consultation."
+        path="/404"
+      />
+      <section className="atlas-section bg-paper-100">
       <div className="atlas-container max-w-2xl mx-auto text-center">
         <p className="font-mono text-[11px] tracking-[0.18em] uppercase text-rose-600 mb-4">
           Page not found · 404
@@ -18,7 +25,7 @@ export const NotFoundPage: React.FC = () => {
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
           <Link
             to="/"
-            className="inline-flex items-center gap-3 bg-rose-400 text-paper-100 h-12 px-7 rounded-full shadow-[0_6px_16px_-8px_rgba(192,62,100,0.4)] text-sm tracking-tight hover:bg-rose-500 transition-colors"
+            className="inline-flex items-center gap-3 bg-rose-500 text-paper-100 h-12 px-7 rounded-full shadow-[0_6px_16px_-8px_rgba(192,62,100,0.4)] text-sm tracking-tight hover:bg-rose-600 transition-colors"
           >
             <ArrowLeft size={16} strokeWidth={1.5} aria-hidden="true" />
             Home
@@ -31,6 +38,7 @@ export const NotFoundPage: React.FC = () => {
           </Link>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 };

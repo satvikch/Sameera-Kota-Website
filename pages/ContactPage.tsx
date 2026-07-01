@@ -3,6 +3,8 @@ import { FileText, MapPin, Car, MessageCircle, Phone, Mail, AlertCircle } from '
 import { ContactSection } from '../components/ContactSection';
 import { Reveal } from '../components/ui/Reveal';
 import { SectionHeading } from '../components/ui/SectionHeading';
+import { Seo } from '../components/ui/Seo';
+import { breadcrumbLd } from '../components/ui/jsonld';
 
 const BEFORE_YOU_ARRIVE = [
   {
@@ -13,7 +15,7 @@ const BEFORE_YOU_ARRIVE = [
       'A written list of current medications with doses',
       'A note of any known allergies',
       'Your health-insurance card, if you have one',
-      'Someone you trust, if you\u2019d like a second pair of ears',
+      'Someone you trust, if you’d like a second pair of ears',
     ],
   },
   {
@@ -22,8 +24,8 @@ const BEFORE_YOU_ARRIVE = [
     items: [
       'Susheela Hospital, 11-12-147, Road No. 3',
       'SRK Puram, Kothapet, Hyderabad',
-      'The clinic is on the main road — look for the hospital\u2019s front-facing entrance',
-      'Call from the gate if you can\u2019t spot the sign',
+      'The clinic is on the main road — look for the hospital’s front-facing entrance',
+      'Call from the gate if you can’t spot the sign',
     ],
   },
   {
@@ -32,7 +34,7 @@ const BEFORE_YOU_ARRIVE = [
     items: [
       'Two-wheeler and four-wheeler parking on the hospital premises',
       'Dilsukhnagar metro is the nearest rail connection',
-      'TSRTC buses 290, 293 stop within five minutes\u2019 walking distance',
+      'TSRTC buses 290, 293 stop within five minutes’ walking distance',
       'Cab drop-off directly at the hospital entrance',
     ],
   },
@@ -68,6 +70,12 @@ const REPLY_CHANNELS = [
 export const ContactPage: React.FC = () => {
   return (
     <>
+      <Seo
+        title="Contact · Dr. Sameera K, Susheela Hospital Kothapet"
+        description="Susheela Hospital, SRK Puram, Kothapet, Hyderabad. Call, WhatsApp or email Dr. Sameera K's clinic — we reply within one working day. Map and directions inside."
+        path="/contact"
+        jsonLd={breadcrumbLd([{ label: 'Home', path: '/' }, { label: 'Contact' }])}
+      />
       <ContactSection />
 
       {/* ───────────────────── Before you arrive ───────────────────── */}
@@ -133,7 +141,7 @@ export const ContactPage: React.FC = () => {
                   What to <span className="text-rose-600">expect from us</span> when you reach out.
                 </>
               }
-              lede="If we\u2019re slower than this, please chase — something has gone wrong on our end."
+              lede="If we’re slower than this, please chase — something has gone wrong on our end."
             />
           </Reveal>
 

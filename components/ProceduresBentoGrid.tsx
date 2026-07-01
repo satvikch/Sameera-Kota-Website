@@ -11,6 +11,7 @@ import {
   Zap,
 } from 'lucide-react';
 import { site } from '../content/site';
+import { assetUrl } from './ui/asset';
 import { SectionHeading } from './ui/SectionHeading';
 import { Reveal } from './ui/Reveal';
 
@@ -39,6 +40,7 @@ interface ProcedureCardProps {
 export const ProcedureCard: React.FC<ProcedureCardProps> = ({ procedure }) => {
   const Icon = PROCEDURE_ICONS[procedure.icon] ?? Activity;
   const hasImage = procedure.imageUrl && !procedure.imageUrl.startsWith('{{');
+  const imgSrc = assetUrl(procedure.imageUrl);
 
   return (
     <Link
@@ -47,13 +49,13 @@ export const ProcedureCard: React.FC<ProcedureCardProps> = ({ procedure }) => {
     >
 
       {/* Image region */}
-      <div className="aspect-[16/10] bg-rose-100 overflow-hidden relative">
+      <div className="aspect-[16/10] bg-paper-50 overflow-hidden relative">
         {hasImage ? (
           <img
-            src={procedure.imageUrl}
+            src={imgSrc}
             alt={procedure.imageAlt ?? procedure.title}
             loading="lazy"
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            className="w-full h-full object-contain p-5 transition-transform duration-500 group-hover:scale-[1.03]"
           />
         ) : (
           <div

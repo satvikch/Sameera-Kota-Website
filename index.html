@@ -4,173 +4,90 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#FFFFFF" />
-    <title>Dr. Sameera K · General, Laparoscopic & Laser Surgeon, Kothapet, Hyderabad</title>
-    <meta name="description" content="General and laparoscopic surgeon at Susheela Hospital, Kothapet, Hyderabad. Minimally invasive care for hernia, gallstones, appendicitis, piles, thyroid and breast — by Dr. Sameera K (MS, FMAS, FISCP)." />
-    <meta name="keywords" content="laparoscopic surgeon Hyderabad, laser proctologist, piles treatment, hernia surgery, gallbladder surgery, Kothapet, female surgeon, Dr. Sameera K, Susheela Hospital" />
     <meta name="author" content="Dr. Sameera K" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://drsameerakota.com/" />
 
-    <meta property="og:type" content="website" />
+    <!-- Per-route <title>, description, canonical, robots and Open Graph/Twitter
+         tags are injected by the <Seo> component (see components/ui/Seo.tsx) and
+         baked into each prerendered page. Only truly global head elements live
+         here. -->
     <meta property="og:locale" content="en_IN" />
     <meta property="og:site_name" content="Dr. Sameera K — Susheela Hospital" />
-    <meta property="og:title" content="Dr. Sameera K · General, Laparoscopic & Laser Surgeon" />
-    <meta property="og:description" content="Minimally invasive surgical care in Kothapet, Hyderabad. Hernia, gallstones, appendicitis, piles, thyroid, breast and diabetic foot — from a female surgeon." />
-    <meta property="og:url" content="https://drsameerakota.com/" />
-    <meta property="og:image" content="https://drsameerakota.com/og-image.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Dr. Sameera K · Susheela Hospital, Hyderabad" />
-    <meta name="twitter:description" content="Laparoscopic and laser-led surgical care from a female surgeon at Susheela Hospital, Kothapet, Hyderabad." />
-    <meta name="twitter:image" content="https://drsameerakota.com/og-image.jpg" />
 
     <!-- Typography: Bricolage Grotesque (display), Commissioner (body), JetBrains Mono (labels) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Commissioner:wght@300..700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              display: ['"Bricolage Grotesque"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-              sans: ['Commissioner', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-              mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
-            },
-            colors: {
-              // Petal Wash — true-white canvas, painted with rose ornament
-              paper: {
-                50:  '#FDFBFA',  // card alt — slight off-white
-                100: '#FFFFFF',  // primary surface — true white
-                200: '#FBE8E5',  // pink-tinted panel (testimonials, soft sections)
-                300: '#EADFD9',  // hairline / divider (footer, figcaps only)
-                400: '#C9B8B0',  // deeper neutral
-              },
-              ink: {
-                300: '#9C8590',
-                500: '#6B5260',
-                700: '#3A2730',
-                900: '#1F1418',  // body — plum-bias dark
-              },
-              // Rose — feature pink, truer hue (~345°)
-              rose: {
-                50:  '#FFF1F4',
-                100: '#FFDCE3',
-                200: '#FBB8C5',
-                300: '#F38BA1',
-                400: '#E36482',  // primary CTA fill
-                500: '#C94668',  // hover / pressed
-                600: '#A4304F',  // link text on white (AA pass)
-                700: '#7A2238',  // chapter marks, italic eyebrows
-                800: '#501623',
-                900: '#2B0C13',
-              },
-              // Peony — secondary wash, barely-violet, prevents monochromatic
-              peony: {
-                50:  '#F6EEFF',
-                100: '#E9DAFB',
-                300: '#B89BE0',
-                600: '#6B4D9A',
-              },
-              // Cream — fourth wash anchor, prevents pink-fatigue
-              cream: {
-                100: '#FFF6E8',
-              },
-              // Cherry emergency, slightly cooler than current
-              signal: '#C2342B',
-            },
-            letterSpacing: {
-              label: '0.16em',
-              tightest: '-0.045em',
-              tighter: '-0.025em',
-              tight: '-0.015em',
-            },
-            maxWidth: {
-              prose: '62ch',
-              'column-sm': '36rem',
-            },
-            keyframes: {
-              drawHorizontal: {
-                '0%': { transform: 'scaleX(0)', transformOrigin: 'left center' },
-                '100%': { transform: 'scaleX(1)', transformOrigin: 'left center' },
-              },
-              drawVertical: {
-                '0%': { transform: 'scaleY(0)', transformOrigin: 'top center' },
-                '100%': { transform: 'scaleY(1)', transformOrigin: 'top center' },
-              },
-              fadeLabel: {
-                '0%': { opacity: '0', transform: 'translateY(4px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              },
-              pinPulse: {
-                '0%, 100%': { transform: 'scale(1)', opacity: '0.9' },
-                '50%': { transform: 'scale(1.15)', opacity: '1' },
-              },
-            },
-            animation: {
-              'draw-h': 'drawHorizontal 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both',
-              'draw-v': 'drawVertical 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both',
-              'fade-label': 'fadeLabel 0.6s ease-out both',
-              'pin-pulse': 'pinPulse 2.6s ease-in-out infinite',
-            },
-          },
-        },
-      };
-    </script>
-    <script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom": "https://esm.sh/react-dom@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react-router-dom": "https://esm.sh/react-router-dom@^6.28.0?deps=react@^19.2.3,react-dom@^19.2.3",
-    "react-router": "https://esm.sh/react-router@^6.28.0?deps=react@^19.2.3",
-    "@remix-run/router": "https://esm.sh/@remix-run/router@^1.21.0",
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0?deps=react@^19.2.3",
-    "framer-motion": "https://esm.sh/framer-motion@^12.25.0?deps=react@^19.2.3,react-dom@^19.2.3"
-  }
-}
-</script>
-    <link rel="stylesheet" href="/index.css">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/favicon.svg" />
 
+    <!-- Global entity graph: present on every prerendered page. Page-specific
+         schema (MedicalProcedure, FAQPage, BreadcrumbList) is added per route. -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
+          "@type": "WebSite",
+          "@id": "https://drsameerakota.com/#website",
+          "url": "https://drsameerakota.com/",
+          "name": "Dr. Sameera K — Susheela Hospital",
+          "inLanguage": "en-IN",
+          "publisher": { "@id": "https://drsameerakota.com/#clinic" }
+        },
+        {
           "@type": ["MedicalClinic", "LocalBusiness"],
           "@id": "https://drsameerakota.com/#clinic",
           "name": "Susheela Hospital — Dr. Sameera K",
           "url": "https://drsameerakota.com/",
-          "telephone": "+91 81252 05698",
+          "telephone": "+918125205698",
           "email": "drsameerakota@gmail.com",
           "image": "https://drsameerakota.com/og-image.jpg",
           "description": "General, laparoscopic and laser surgical practice of Dr. Sameera K at Susheela Hospital, SRK Puram, Kothapet, Hyderabad.",
           "priceRange": "$$",
+          "currenciesAccepted": "INR",
+          "medicalSpecialty": "Surgical",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "11-12-147, Road No. 3, SRK Puram, Kothapet",
             "addressLocality": "Hyderabad",
             "addressRegion": "Telangana",
+            "postalCode": "500035",
             "addressCountry": "IN"
           },
-          "medicalSpecialty": ["Surgery", "GeneralSurgery"]
+          "areaServed": [
+            { "@type": "Place", "name": "Kothapet, Hyderabad" },
+            { "@type": "Place", "name": "Dilsukhnagar, Hyderabad" },
+            { "@type": "Place", "name": "LB Nagar, Hyderabad" },
+            { "@type": "Place", "name": "Saidabad, Hyderabad" },
+            { "@type": "Place", "name": "Vanasthalipuram, Hyderabad" }
+          ],
+          "hasMap": "https://maps.app.goo.gl/kDN6jZzNM1M8Lqwf6",
+          "sameAs": [
+            "https://www.google.com/maps?cid=13795977123586586427"
+          ],
+          "founder": { "@id": "https://drsameerakota.com/#physician" },
+          "employee": { "@id": "https://drsameerakota.com/#physician" }
         },
         {
           "@type": "Physician",
           "@id": "https://drsameerakota.com/#physician",
           "name": "Dr. Sameera K",
           "honorificPrefix": "Dr.",
-          "gender": "Female",
+          "gender": "https://schema.org/Female",
           "url": "https://drsameerakota.com/about",
-          "telephone": "+91 81252 05698",
+          "image": "https://drsameerakota.com/dr-sameera-portrait.jpg",
+          "telephone": "+918125205698",
           "email": "drsameerakota@gmail.com",
           "jobTitle": "General, Laparoscopic & Laser Surgeon",
-          "medicalSpecialty": ["Surgery", "GeneralSurgery"],
+          "medicalSpecialty": "Surgical",
+          "hasCredential": [
+            { "@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "MBBS" },
+            { "@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "MS (General Surgery)" },
+            { "@type": "EducationalOccupationalCredential", "credentialCategory": "Fellowship", "name": "Fellowship in Minimal Access Surgery (FMAS)", "recognizedBy": { "@type": "Organization", "name": "Association of Minimal Access Surgeons of India" } },
+            { "@type": "EducationalOccupationalCredential", "credentialCategory": "Fellowship", "name": "Fellowship of the Indian Society for Colorectal Proctology (FISCP)", "recognizedBy": { "@type": "Organization", "name": "Indian Society for Colorectal Proctology" } }
+          ],
           "knowsAbout": [
             "Laparoscopic surgery",
             "Laser proctology",
@@ -184,9 +101,11 @@
           ],
           "sameAs": [
             "https://www.instagram.com/drsameera.genralsurgeon/",
-            "https://www.facebook.com/profile.php?id=61575129399475"
+            "https://www.facebook.com/profile.php?id=61575129399475",
+            "https://www.google.com/maps?cid=13795977123586586427"
           ],
-          "worksFor": { "@id": "https://drsameerakota.com/#clinic" }
+          "worksFor": { "@id": "https://drsameerakota.com/#clinic" },
+          "workLocation": { "@id": "https://drsameerakota.com/#clinic" }
         }
       ]
     }

@@ -4,6 +4,7 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { site } from '../content/site';
 import { cn } from './ui/cn';
+import { Logo } from './ui/Logo';
 
 const NAV = [
   { to: '/', label: 'Home', short: 'Home', mark: '01', end: true, dropdown: false },
@@ -16,9 +17,7 @@ const NAV = [
 function Brandmark() {
   return (
     <Link to="/" className="group flex items-center gap-3" aria-label="Dr. Sameera K — home">
-      <span className="flex h-9 w-9 items-center justify-center border border-ink-900 bg-paper-50 font-mono text-[11px] tracking-[0.08em] text-ink-900">
-        SK
-      </span>
+      <Logo variant="plate" className="h-9 w-9 flex-shrink-0" />
       <span className="flex flex-col leading-[1.05]">
         <span className="atlas-display text-[1.05rem] text-ink-900">
           Dr. Sameera K
@@ -165,6 +164,8 @@ function ProceduresNavItem() {
 export const HeaderSticky: React.FC = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const drawerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -178,6 +179,45 @@ export const HeaderSticky: React.FC = () => {
     document.body.style.overflow = 'hidden';
     return () => {
       document.body.style.overflow = '';
+    };
+  }, [open]);
+
+  // Mobile drawer: focus in on open, trap Tab, Escape to close, restore on close.
+  useEffect(() => {
+    if (!open) return;
+    const getFocusable = (): HTMLElement[] => {
+      const root = drawerRef.current;
+      if (!root) return [];
+      return Array.from(
+        root.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
+      );
+    };
+    getFocusable()[0]?.focus();
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setOpen(false);
+        return;
+      }
+      if (e.key !== 'Tab') return;
+      const f = getFocusable();
+      if (f.length === 0) return;
+      const first = f[0];
+      const last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      toggleRef.current?.focus();
     };
   }, [open]);
 
@@ -241,17 +281,19 @@ export const HeaderSticky: React.FC = () => {
           </a>
           <Link
             to="/contact"
-            className="inline-flex items-center h-10 px-5 bg-rose-400 text-paper-100 text-sm tracking-tight rounded-full shadow-[0_4px_12px_-6px_rgba(192,62,100,0.4)] hover:bg-rose-500 transition-colors"
+            className="inline-flex items-center h-10 px-5 bg-rose-500 text-paper-100 text-sm tracking-tight rounded-full shadow-[0_4px_12px_-6px_rgba(192,62,100,0.4)] hover:bg-rose-600 transition-colors"
           >
             Book consultation
           </Link>
         </div>
 
         <button
+          ref={toggleRef}
           type="button"
           className="md:hidden p-2 text-ink-900"
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
+          aria-controls="mobile-drawer"
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
@@ -272,6 +314,8 @@ export const HeaderSticky: React.FC = () => {
             />
             <motion.nav
               key="drawer"
+              ref={drawerRef}
+              id="mobile-drawer"
               initial={{ y: -12, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -6, opacity: 0 }}

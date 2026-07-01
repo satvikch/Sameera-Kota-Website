@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* ────────────────────────────────────────────────────────────
    Clinical Atlas — surface + motif system
    ──────────────────────────────────────────────────────────── */
@@ -39,6 +43,9 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  font-optical-sizing: auto;
+  /* Keep anchored content clear of the sticky header on hash jumps. */
+  scroll-padding-top: 5.5rem;
 }
 
 body {
@@ -46,6 +53,18 @@ body {
   color: var(--ink-900);
   font-feature-settings: "ss01", "cv11", "kern";
   font-variation-settings: "wght" 400;
+}
+
+/* Typographic defaults: even last lines on prose, aligned figures on mono
+   data. Small details that separate hand-set type from default output. */
+p {
+  text-wrap: pretty;
+}
+.atlas-label,
+.atlas-label-tight,
+.atlas-figcap,
+.atlas-pagenum {
+  font-variant-numeric: tabular-nums;
 }
 
 /* Petal Wash — global decorative blob layer mounted in Layout.tsx */
@@ -71,6 +90,8 @@ body {
   font-variation-settings: "opsz" 96, "wdth" 100, "wght" 500;
   letter-spacing: -0.025em;
   line-height: 0.96;
+  /* Even out multi-line display headings — no single-word last lines. */
+  text-wrap: balance;
 }
 
 .atlas-display-tight {
@@ -229,6 +250,21 @@ body {
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Lenis smooth scroll — these classes are applied to <html> on the client. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 @media print {

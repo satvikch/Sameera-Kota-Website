@@ -32,6 +32,11 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          # GitHub Pages serves this repo from the /Sameera-Kota-Website/ project
+          # subpath and it must stay out of Google's index (the real site is the
+          # apex domain). This flag sets the subpath base + noindex for the preview.
+          VITE_DEPLOY_TARGET: preview
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

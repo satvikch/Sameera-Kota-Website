@@ -5,6 +5,9 @@ import { site } from '../content/site';
 import { Reveal } from '../components/ui/Reveal';
 import { ClinicGallery } from '../components/ClinicGallery';
 import { CTABanner } from '../components/CTABanner';
+import { Seo } from '../components/ui/Seo';
+import { assetUrl } from '../components/ui/asset';
+import { breadcrumbLd } from '../components/ui/jsonld';
 
 // The four principles already exist in site.whyChooseUs — we re-use them
 // here as "approach to care" rather than re-writing new copy.
@@ -17,6 +20,13 @@ export const AboutPage: React.FC = () => {
 
   return (
     <>
+      <Seo
+        title="About Dr. Sameera K · General & Laparoscopic Surgeon"
+        description="Dr. Sameera K — MBBS, MS (General Surgery), FMAS, FISCP. A fellowship-trained general, laparoscopic and laser surgeon in Kothapet, Hyderabad, with unhurried, private consultations."
+        path="/about"
+        type="profile"
+        jsonLd={breadcrumbLd([{ label: 'Home', path: '/' }, { label: 'About Dr. Sameera K' }])}
+      />
       {/* ───────────────────── 1 · Page heading ───────────────────── */}
       <section className="atlas-section">
         <div className="atlas-container">
@@ -54,7 +64,7 @@ export const AboutPage: React.FC = () => {
                 <div className="aspect-[4/5] bg-rose-50 relative overflow-hidden">
                   {hasRealPhoto ? (
                     <img
-                      src={doctor.photo}
+                      src={assetUrl(doctor.photo)}
                       alt={doctor.photoAlt}
                       className="w-full h-full object-cover"
                       loading="lazy"

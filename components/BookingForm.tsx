@@ -52,10 +52,16 @@ export const BookingForm: React.FC = () => {
     e.preventDefault();
     const next = validate(fields);
     setErrors(next);
-    if (Object.keys(next).length > 0) return;
+    if (Object.keys(next).length > 0) {
+      // Move focus to the first invalid field so its error is announced.
+      const order: (keyof Fields)[] = ['name', 'phone', 'email', 'message'];
+      const firstInvalid = order.find((k) => next[k]);
+      if (firstInvalid) document.getElementById(`bf-${firstInvalid}`)?.focus();
+      return;
+    }
 
     const text = [
-      `Hello Dr. Sameera Kota —`,
+      `Hello Dr. Sameera K —`,
       `I would like to request a consultation.`,
       ``,
       `Full name: ${fields.name}`,
@@ -125,10 +131,15 @@ export const BookingForm: React.FC = () => {
               value={fields.name}
               onChange={update('name')}
               aria-invalid={!!errors.name}
+              aria-describedby={errors.name ? 'bf-name-error' : undefined}
               className={cn(fieldClass, errors.name && 'border-signal')}
               placeholder="Ramesh Kumar"
             />
-            {errors.name && <p className="text-xs text-signal mt-1 font-mono">{errors.name}</p>}
+            {errors.name && (
+              <p id="bf-name-error" className="text-xs text-signal mt-1 font-mono">
+                {errors.name}
+              </p>
+            )}
           </div>
           <div>
             <label htmlFor="bf-phone" className={labelClass}>
@@ -143,10 +154,15 @@ export const BookingForm: React.FC = () => {
               value={fields.phone}
               onChange={update('phone')}
               aria-invalid={!!errors.phone}
+              aria-describedby={errors.phone ? 'bf-phone-error' : undefined}
               className={cn(fieldClass, errors.phone && 'border-signal')}
               placeholder="+91 XXXXX XXXXX"
             />
-            {errors.phone && <p className="text-xs text-signal mt-1 font-mono">{errors.phone}</p>}
+            {errors.phone && (
+              <p id="bf-phone-error" className="text-xs text-signal mt-1 font-mono">
+                {errors.phone}
+              </p>
+            )}
           </div>
         </div>
 
@@ -162,10 +178,15 @@ export const BookingForm: React.FC = () => {
               value={fields.email}
               onChange={update('email')}
               aria-invalid={!!errors.email}
+              aria-describedby={errors.email ? 'bf-email-error' : undefined}
               className={cn(fieldClass, errors.email && 'border-signal')}
               placeholder="you@example.com"
             />
-            {errors.email && <p className="text-xs text-signal mt-1 font-mono">{errors.email}</p>}
+            {errors.email && (
+              <p id="bf-email-error" className="text-xs text-signal mt-1 font-mono">
+                {errors.email}
+              </p>
+            )}
           </div>
           <div>
             <label htmlFor="bf-procedure" className={labelClass}>
@@ -201,17 +222,22 @@ export const BookingForm: React.FC = () => {
             value={fields.message}
             onChange={update('message')}
             aria-invalid={!!errors.message}
+            aria-describedby={errors.message ? 'bf-message-error' : undefined}
             className={cn(fieldClass, 'h-auto py-3', errors.message && 'border-signal')}
             placeholder="What has brought you in, for how long, and anything you want us to know."
           />
-          {errors.message && <p className="text-xs text-signal mt-1 font-mono">{errors.message}</p>}
+          {errors.message && (
+            <p id="bf-message-error" className="text-xs text-signal mt-1 font-mono">
+              {errors.message}
+            </p>
+          )}
         </div>
       </fieldset>
 
       <div className="flex flex-col sm:flex-row sm:items-center gap-6 pt-6 border-t border-paper-300">
         <button
           type="submit"
-          className="inline-flex items-center gap-3 bg-rose-400 text-paper-100 h-12 px-7 rounded-full shadow-[0_6px_16px_-8px_rgba(192,62,100,0.4)] text-sm tracking-tight hover:bg-rose-500 transition-colors"
+          className="inline-flex items-center gap-3 bg-rose-500 text-paper-100 h-12 px-7 rounded-full shadow-[0_6px_16px_-8px_rgba(192,62,100,0.4)] text-sm tracking-tight hover:bg-rose-600 transition-colors"
         >
           <MessageCircle size={16} strokeWidth={1.5} aria-hidden="true" />
           Send note via WhatsApp
